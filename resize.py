@@ -17,6 +17,8 @@ def resize_canvas(filename, new_image_path="save.png", canvas_width=500, canvas_
     """
     old_image_path = filename
     im = Image.open(old_image_path)
+    if(im.mode=='P'):
+        im = Image.open(old_image_path).convert('RGB')
     old_width, old_height = im.size
 
     # Center the image
