@@ -1,0 +1,277 @@
+.login-set{
+	[class^=b-].b-btn{
+		padding: 0;
+		line-height: 40px;
+	}
+	[class^=b-].md{
+		padding: 0;
+		line-height: 40px;
+	}
+	.member-login{
+		.box{padding-left: 10px; padding-right: 10px;}
+		.set{
+			position:relative;
+			padding-right:0;
+			>i{
+				display:block;
+				background: url(/fss/portal/img/member/login-i1.png) no-repeat 50% 50%;
+				width: 100%;
+				height:108px;
+				float: left;
+			}
+			span{
+				position:relative;
+				display:block;
+				margin-bottom:10px;
+				overflow:hidden;
+				padding-left:18px;
+				input{
+					width:100%;
+					text-indent:10px;
+				}
+			}
+			.login-btn{
+				text-align: center;
+				i{display: block;}
+				position:absolute;
+				right:0;
+				top:0;
+				width:120px;
+				height:90px;
+				color:#fff;
+				background-color:$point;
+				border-radius: 5px;
+				border:none;
+			}
+		}
+		.member-login-etc{
+			border-top:1px solid $bdcolor;
+			margin-top: 20px;
+			padding-top: 20px;
+			text-align: center;
+			a{
+				min-width: 80px;
+			}
+			@include breakpoint($sm){
+				[class^=b-].b-btn,
+				[class^=b-].b-line{
+					padding:0 5px;
+				}
+			}
+		}
+	}
+	.digital-pass{
+		i{
+			display: inline-block;
+			width: 192px;
+			height: 40px;
+			margin-bottom: 9px;
+			background: url(/fss/portal/img/member/digitalpass.png) no-repeat;
+		}
+		.desc{
+			display: inline-block;
+			vertical-align: middle;
+			color: $black;
+			margin-right: 90px;
+		}
+		.digital-ico{
+			background:$midnightblue url(/fss/portal/img/member/digitalpass_w.png) no-repeat 20px 50%;
+			background-size: 30px;
+			display: inline-block;
+			vertical-align: middle;
+			padding-left: 60px;
+			padding-right: 20px;
+		}
+	}
+	.loginAdm{
+		padding-top:40px;
+		border-top:1px solid $bdcolor;
+		margin:0 20px;
+		h3{
+			font-size:18px;
+			margin-bottom:18px;
+		}
+		ul{
+			@include clearfix();
+			text-align:center;
+			li{
+				border:1px solid $bdcolor;
+				float:left;
+				margin:10px 2%;
+				width:46%;
+				padding:30px 20px;
+				p{
+					margin-bottom:5px;
+				}
+				a{
+					padding:13px 18px;
+					line-height:1;
+					display:inline-block;
+					background-color:#6e7aa9;
+					color:#fff;
+				}
+			}
+		}
+	}
+	&.type2{
+		&.pass-in {
+			.member-login .set > i {
+				background-image: url(/fss/portal/img/member/200824_01.png);
+			}
+		}
+		.member-login .set > i {
+			background-image: url(/fss/portal/img/member/login-phone.png);
+		}
+		.set{
+			label{
+				width: 80px;
+				display: inline-block;
+				line-height: 40px;
+				vertical-align: top;
+			}
+			.label-val{
+				line-height: 40px;
+			}
+			span input,
+			.label-val{
+				width: calc(100% - 85px);
+			}
+		}
+	}
+	&.type3{
+		.member-login .set{
+			padding-right: 0;
+			h2{
+				margin-top: 0 !important; 
+			}
+			@include breakpoint($lg){
+				span{
+					padding-left: 54px;
+				}
+			}
+		}
+		.member-login .set > i {
+			background-image: url(/fss/portal/img/member/login-phone-msg.png);
+		}
+	}
+}
+
+.input-group{
+	@include breakpoint($mdw){
+		display: flex;
+		// justify-content:start;
+		// align-items: start;
+		.in-label{
+			width: 130px;
+		}
+		.in-rt{
+			margin-bottom: 17px;
+			width: calc(100% - 130px);
+		}
+	}
+}
+
+label.in-label{
+	display: inline-block;
+	width: 100%;
+	line-height: 40px;
+	+ input{
+		width: 100% !important;
+	}
+	@include breakpoint($mdw){
+		width: 145px;
+		+ input{
+			width: calc(100% - 150px) !important;
+		}
+	}
+}
+.t-star{
+	text-indent:-18px;
+	padding-left:18px;
+	color:#f76627;
+}
+
+.member-login-none{
+	.box-bd{
+		padding-top: 10px;
+	}
+	.phone-ipin{
+		.b-btn{ min-width: 140px;}
+		.b-line{
+			margin-right: 7px;
+		}
+	}
+}
+.sns-logins{
+	text-align: center;
+	height: 60px;
+	.set{
+		display: inline-block;
+		margin:0 auto;
+	}
+	a{
+		margin-right:20px;
+		width:40px;
+		height:40px;
+		background-repeat:no-repeat;
+		background-size:40px;
+		display: inline-block;
+		/* &.sns-naver{
+			background-image:url(/fss/portal/img/common/sns-naver.png);
+		}
+		&.sns-kakaotalk{
+			background-image:url(/fss/portal/img/common/sns-kakao.png);
+		}
+		&.sns-facebook{
+			background-image:url(/fss/portal/img/common/sns-facebook.png);
+		}
+		&.sns-google{
+			background-image:url(/fss/portal/img/common/sns-google.png);
+			margin-right: 0;
+		} */
+	}
+}
+
+@include breakpoint($sm){
+	.login-set .member-login .set{
+		padding-right: 80px;
+		i{
+			display: block;
+			width: 100%;
+			margin-bottom: 20px;
+			&.i-visible{
+				margin-bottom: 20px;
+				display: block;
+			}
+		}
+		span{
+			padding-left: 0;
+			overflow: visible;
+		}
+		.login-btn{
+			width: 70px;
+			height: 100%;
+			top: auto;
+			bottom: 0;
+		}
+	}
+}
+@include breakpoint($mdw){
+	.login-set .member-login .set{
+		padding-right: 130px;
+		> i{
+			width: 202px;
+			height:108px;
+		}
+	} 
+	.login-set .member-login .box {
+		padding-left: 100px;
+		padding-right: 100px;
+	}
+	.login-set .member-login .member-login-etc a{
+		min-width: 140px;
+	}
+	.login-set .digital-pass p {
+		margin-bottom: 0;
+	}
+}

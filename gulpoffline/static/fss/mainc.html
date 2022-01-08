@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/fss/fss/css/mainc.css">
+	<script src="/fss/jslibrary/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+	<div id="w">
+		<div class="header">
+		</div>
+		<div class="visual-set">
+			<div class="visual">
+				<div class="ctrl">
+					<a href="#" class="left visual__left"></a>
+					<a href="#" class="right visual__right"></a>
+				</div>
+				<div class="nav">
+					<a href="#" data-index=0 class="active">종합안내</a>
+					<a href="#" data-index=1>민원신고</a>
+					<a href="#" data-index=2>자료 및 정보</a>
+					<a href="#" data-index=3>금감원 소개</a>
+				</div>
+				<div class="item-set">
+					<div class="item item-0 active">
+						<img src="/fss/img/set1.png" alt="">
+					</div>
+					<div class="item item-1">
+						<img src="/fss/img/set2.png" alt="">
+					</div>
+					<div class="item item-2">
+						<img src="/fss/img/set3.png" alt="">
+					</div>
+					<div class="item item-3">
+						<img src="/fss/img/set4.png" alt="">
+					</div>
+				</div>
+				<div class="bg-set">
+					<div class="item i1"><img src="/fss/img/bg1.jpg" alt=""></div>
+					<div class="item i1"><img src="/fss/img/bg2.jpg" alt=""></div>
+					<div class="item i1"><img src="/fss/img/bg3.jpg" alt=""></div>
+					<div class="item i1"><img src="/fss/img/bg4.jpg" alt=""></div>
+				</div>
+				<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+				<script src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+				<script>
+					var photoSetList = $(".bg-set").slick({
+						autoplay: false,
+						autoplaySpeed: 1000,
+						dots: false,
+						infinite: true,
+						// centerMode: true,
+						// centerPadding : '0px',
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						accessibility: true,
+						pauseOnFocus: false,
+						arrows: false,
+					});
+					photoSetList
+						.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+							photoSetList.find('.item').removeClass('active')
+							console.log('beforeChange', nextSlide);
+						})
+						.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+							photoSetList.find('.slick-active').addClass('active')
+							console.log('afterChange', event, slick, currentSlide, nextSlide);
+						});
+					$('.nav a').on('click', function (e) {
+						_index = $(this).data().index
+						photoSetList.slick('slickGoTo', _index)
+						$(this).addClass('active').siblings().removeClass('active')
+						// $('.item-set .item').slideUp().end().removeClass('active')
+						$('.item-set .item-' + _index).addClass('active').siblings().removeClass('active')
+					});
+					var _current = 0
+					$('.visual__left').click(function (e) {
+						e.preventDefault();
+						_current--
+						if (_current < 0) {
+							_current = 3
+						}
+						$('.visual .nav a').eq(_current).trigger('click')
+						// photoSetList.slick('slickGoTo', _current)
+					});
+					$('.visual__right').click(function (e) {
+						e.preventDefault();
+						_current++
+						if (_current > 3) {
+							_current = 0
+						}
+						$('.visual .nav a').eq(_current).trigger('click')
+						// photoSetList.slick('slickGoTo', _current)
+					});
+
+				</script>
+				<div class="quick">
+					<a href="#" class="left quick__left"><img src="/fss/img/btn-arr-left.png" alt=""></a>
+					<div class="quick__item">
+						<a href="#"><img src="/fss/img/i1.png" alt=""></a>
+						<a href="#"><img src="/fss/img/i2.png" alt=""></a>
+						<a href="#"><img src="/fss/img/i3.png" alt=""></a>
+						<a href="#"><img src="/fss/img/i4.png" alt=""></a>
+						<a href="#"><img src="/fss/img/i5.png" alt=""></a>
+						<a href="#"><img src="/fss/img/i6.png" alt=""></a>
+						<a href="#"><img src="/fss/img/i7.png" alt=""></a>
+						<a href="#" class="js-allnav"><img src="/fss/img/btn-all-view.png" alt=""></a>
+					</div>
+					<a href="#" class="right quick__right"><img src="/fss/img/btn-arr-right.png" alt=""></a>
+				</div>
+				<script src="/fss/jslibrary/greensock/gsap.min.js"></script>
+				<script src="/fss/jslibrary/greensock/DrawSVGPlugin.min.js"></script>
+				<script src="/fss/jslibrary/greensock/TextPlugin.min.js"></script>
+				<script src="/fss/jslibrary/greensock/EasePack.min.js"></script>
+				<script src="/fss/jslibrary/greensock/MotionPathPlugin.min.js"></script>
+				<script src="/fss/jslibrary/greensock/MotionPathHelper.min.js"></script>
+				<script src="/fss/jslibrary/greensock/GSDevTools.min.js"></script>
+				<script>
+					mainnav = gsap.timeline();
+					mainnav.from('.quick__item a:nth-child(1)', 0.5, { top: -10, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.0')
+					mainnav.from('.quick__item a:nth-child(2)', 0.5, { top: -10, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.4')
+					mainnav.from('.quick__item a:nth-child(3)', 0.5, { top: -10, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.4')
+					mainnav.from('.quick__item a:nth-child(4)', 0.5, { top: -10, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.4')
+					mainnav.from('.quick__item a:nth-child(5)', 0.5, { top: -10, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.4')
+					mainnav.from('.quick__item a:nth-child(6)', 0.5, { top: -10, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.4')
+					mainnav.from('.quick__item a:nth-child(7)', 0.5, { top: -10, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.4')
+					mainnav.from('.quick__item a:nth-child(8)', 0.5, { top: -10, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.4')
+					mainnav.from('.quick__left', 0.5, { top: -10, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.2')
+					mainnav.from('.quick__right', 0.5, { top: -10, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.2')
+					mainnav.from('.visual__left', 0.5, { left: -10, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.2')
+					mainnav.from('.visual__right', 0.5, { right: -10, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.2')
+					$(function () {
+						$('.js-allnav').click(function (e) {
+							e.preventDefault();
+							$('.visual').addClass('off')
+							$('.navAll').addClass('active')
+						});
+						$('.navAll').click((e) => {
+							e.preventDefault();
+							$('.visual').removeClass('off')
+							$('.navAll').removeClass('active')
+						})
+					});
+				</script>
+			</div>
+			<div class="navAll">
+				<img src="/fss/img/btns-on.png" alt="">
+			</div>
+		</div>
+		<div class="body">
+			<img src="/fss/img/mainc_03.png" alt="">
+		</div>
+	</div>
+</body>
+
+</html>

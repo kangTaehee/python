@@ -1,0 +1,68 @@
+body {
+  background: #f3f3f3;
+}
+
+img {
+  border: none;
+}
+
+.list {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list li {
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 306px;
+}
+
+.logo {
+  text-align: center;
+  padding: 70px 0;
+}
+
+a {
+  position: relative;
+  display: block;
+}
+
+.sublist a span,
+.sublist .ss {
+  position: absolute;
+  left: 47px;
+  top: 29px;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  background-position: center 0;
+  width: 242px;
+  height: 126px;
+}
+
+.flogo {
+  text-align: center;
+}
+
+.flogo img {
+  height: 30px;
+}
+
+address {
+  color: #b2b2b2;
+  clear: both;
+  text-align: center;
+  font-size: 8px;
+  font-style: normal;
+  position: fixed;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+}
+
+address span {
+  color: #484848;
+}

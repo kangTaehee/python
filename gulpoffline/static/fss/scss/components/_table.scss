@@ -1,0 +1,356 @@
+.dtb{
+	display: table !important;
+	.dtbc{
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+.table-rt {
+	text-align: right;
+	margin-top: 10px;
+	font-size: 0.875rem;
+}
+table {
+	word-break: break-all;
+	width: 100%;
+	tr.unlock {
+		background-color: $trgray;
+	}
+	td {
+		color: $gray;
+		word-break: keep-all;
+	}
+	th,
+	td{
+		font-size: 0.875rem;
+	}
+}
+.scroll-x {
+	overflow-x: auto;
+	table {
+		min-width: 791px;
+	}
+}
+
+.bdb {
+	border-bottom: 1px solid $bdcolor !important;
+}
+.bdr {
+	border-right: 1px solid $bdcolor !important;
+}
+
+dl.table{
+	border: 1px solid $bdcolor;
+	border-top: 2px solid $bdtopcolor !important;
+	margin-bottom: 7px;
+	dt{
+		background: $thbgcolor;
+		padding: 10px;
+		border-bottom: 1px solid $bdcolor;
+		font-weight: bold;
+		color: #000;
+	}
+	dd{
+		text-align: left;
+		padding: 10px;
+	}
+}
+.table {
+	margin: 15px 0 35px;
+	border-top: 2px solid $bdtopcolor;
+	border-bottom: 1px solid $bdcolor;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	clear: both;
+	.bdr {
+		background-image: none;
+	}
+	@include breakpoint($sm) {
+		&::before {
+			content: '';
+			height: 100%;
+			position: absolute;
+			right: 0;
+			width: 1px;
+			background-color: #ffffff;
+		}
+		&.ovx::before {
+			left: 749px;
+		}
+	}
+	table {
+		width: 100%;
+	}
+	tr {
+		th:last-child {
+			background-image: none;
+		}
+		td:last-child {
+			border-right-width: 0;
+			&[rowspan]{
+				border-left-width: 1px;
+			}
+		}
+	}
+	th {
+		font-weight: 600;
+		line-height: 24px;
+		font-size: 1rem;
+		padding: 13px 0;
+		text-align: center;
+		color: #222;
+		background: $thbgcolor url(/fss/portal/img/common/line.png) no-repeat 100% 50%;
+		border: 0;
+	}
+	&.th-border{
+		th{
+			background-image: none;
+			border-right: 1px solid $bdcolor;
+			&:last-child{
+				border-right: none;
+			}
+			&.bdr1{
+				border-right: 1px solid $bdcolor;
+			}
+		}
+		tr+tr{
+			th{border-top:1px solid $bdcolor;}
+		}
+	}
+	tbody th,
+	td {
+		border: 1px solid $bdcolor;
+		border-width: 1px 1px 0 0;
+		background: none;
+		padding: 5px;
+		&:last-child[rowspan]{
+			border-left-width: 1px;
+		}
+		@include breakpoint($lg){
+			padding: 10px;		
+		}
+	}
+	tbody th {
+		background: $thbgcolor;
+	}
+	&.ovx {
+		@include breakpoint($sm) {
+			overflow-x: auto;
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				right: 0;
+				width: 1px;
+				height: 100%;
+				background-color: #fff;
+			}
+			table {
+				width: 750px;
+			}
+		}
+	}
+	&.fix table {
+		table-layout: fixed;
+	}
+	td.nodata {
+		padding: 60px 0;
+	}
+	td.title {
+		text-align: left;
+	}
+	.table-result-deco {
+		padding: 20px 0;
+		border-top: 1px solid $bdcolor;
+		text-align: center;
+
+		.date {
+			font-size: 14px;
+		}
+		.name {
+			color: #000;
+			font-size: 20px;
+		}
+	}
+	//200208찾아오시는길
+	th.th-db{
+		@include breakpoint($sm){
+			display: block
+		}
+	}
+	td.dt-dl{
+		text-align: left;
+		dl{
+			display: table;
+			dt,dd{display: table-cell;}
+			dt{
+				color: #005baa;
+				&+dd{padding-left: 5px;}
+			}
+			& + [role=button],
+			& + [type=button]{margin-top: 10px;}
+		}
+		@include breakpoint($sm){
+			display: block;
+			dl{
+				dt,dd{display: block}
+				dt + dd{padding-left: 0;}
+			}
+		}
+	}
+	
+}
+.table.type-tbodyth-nomal{
+	tbody tr th{
+		font-weight: normal;
+		background-color: #fff;
+	}
+}
+.table.type-th-multi{
+	thead{
+		tr+tr th{
+			border-top: 1px solid $bdcolor;
+		}
+	}
+}
+.table.td-vat{
+	td{
+		vertical-align: top;
+	}
+}
+.table.ovx.bd-list-type {
+	th,
+	td {
+		padding: 10px 5px;
+	}
+}
+.table-row {
+	.row-th {
+		border-right: 1px solid $bdcolor;
+		@include breakpoint($sm) {
+			display: block;
+		}
+	}
+	th {
+		width: 16.67%;
+		vertical-align: middle;
+		background-color: $thbgcolor;
+		border-bottom: 1px solid $bdcolor;
+	}
+	td {
+		padding: 15px 10px 15px 20px;
+		height: 55px;
+		border-bottom: 1px solid $bdcolor;
+		@include breakpoint($sm) {
+			padding: 5px;
+		}
+	}
+}
+.table.padding-sm {
+	td {
+		padding: 10px 5px;
+	}
+}
+.dbdata {
+	ul {
+		list-style-type: initial;
+		padding-left: 40px;
+	}
+	ol {
+		list-style-type: decimal;
+		margin-left: initial;
+		padding-left: 40px;
+	}
+	em {
+		font-style: italic;
+	}
+}
+.dbdata .c200164-list,
+.dbdata .list-bu {
+	list-style: none;
+}
+.dbdata .c200164-list {
+	padding-left: 0;
+}
+.full-width {
+	@include breakpoint($sm) {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+}
+.td-tal table tbody td {
+	text-align: left;
+}
+.td-tac table tbody td {
+	text-align: center;
+}
+.td-vt table tbody td{
+	vertical-align: top;
+}
+td.bdl-none {
+	border-left: 0 !important;
+}
+td.bdr-none {
+	border-right: 0!important;
+}
+.bd-reg {
+	clear: both;
+	margin-top: 10px;
+	width: 100%;
+	border-top: 2px solid $bdcolor;
+	border-top-width: $bd-topwidth;
+	border-top-color: $bdtopcolor;
+	border-bottom: 1px solid $bdcolor;
+	text-align: center;
+	table-layout: fixed;
+	table {
+		width: 100%;
+		thead {
+			height: 56px;
+			color: #222222;
+		}
+		th,
+		td {
+			padding: 10px 0;
+		}
+		tbody th,
+		td {
+			font-weight: 400;
+			border-top: 1px solid $bdcolor;
+		}
+		td {
+			text-align: left;
+			padding-left: 22px;
+			padding-right: 22px;
+			vertical-align: middle;
+		}
+	}
+	input[type='text'],
+	input[type='number'] {
+		width: 100%;
+	}
+	textarea {
+		width: 100%;
+		height: 86px;
+	}
+	&.type-helpcell td:nth-child(3) {
+		font-size: 0.875rem;
+	}
+}
+
+.table-rt-deco {
+	text-align: right;
+	margin-bottom: 11px;
+	.bu-dot + & {
+		margin-top: -25px;
+	}
+}
+.type-ogg {
+	td.tal {
+		@include breakpoint($lg) {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+	}
+}

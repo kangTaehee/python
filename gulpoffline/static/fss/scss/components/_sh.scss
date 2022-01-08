@@ -1,0 +1,265 @@
+@charset "utf-8";
+.sh{
+	padding: 20px 10px;
+	background-color: $shbgcolor;
+	border-radius: 5px;
+	label{line-height: 40px; padding-right: 5px;}
+	input,
+	select{
+		border: none;
+		border-radius: 5px;
+		width: 100%;
+	}
+	@include breakpoint($sm){
+		padding: 20px;
+	}
+	fieldset{
+		>div{
+			@include breakpoint($mdw){
+				display: flex;
+				>*{
+					display: block;
+					flex-grow: 1;
+					margin: 0 10px;
+				}
+			}
+			@include breakpoint($sm){
+				>*{
+					margin: 10px 0;
+				}
+			}
+		}
+	}
+	&.l{
+		fieldset{
+			display: block;
+			>div{
+				@include breakpoint($mdw){
+					display: flex;
+				}
+				@include breakpoint($sm){
+					flex-direction: column;
+				}
+				&+div{margin-top: 10px;}
+				>*{
+					@include breakpoint($lg){
+						margin: 0 5px;
+					}
+					@include breakpoint($sm){
+						&+*{margin-top: 10px;}
+					}
+				}
+			}
+		}
+	}
+	.deco{
+		font-size: 1.125rem;
+		font-weight: 500;
+		line-height: 1.5rem;
+		display: flex;
+		align-items: center;
+	}
+	.gunName{
+		width: auto;
+	}
+	.keyword-cate{
+		@include breakpoint($sm){
+			display: block;
+			margin: 10px 0;
+		}
+		@include breakpoint($mdw){
+			flex-grow: 1;
+			max-width: 180px;
+		}
+	}
+	.date-set{
+		span{
+			display: inline-block;
+			vertical-align: middle;
+			line-height: 40px;
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+		@include breakpoint($mdw){
+			flex: 0 0 30%;
+			max-width: 30%;
+		}
+		@include breakpoint($sm){
+			display: block;
+			margin-bottom: 10px !important;
+			@include clearfix();
+		}
+		.sdate{float: left;}
+		.sdate,
+		.edate{
+			width: calc(50% - 10px);
+			-webkit-appearance: none !important;
+		}
+		.edate{float: right;}
+	}
+	.b-sh{
+		width: 44px;
+		height: $form-height;
+		color: #ffffff;
+		background-color: $point;
+		font-size: 1.25rem;
+		font-weight: 400;
+		line-height: 26px;
+		letter-spacing: -0.24px;
+		padding: 0;
+		min-width: 0;
+		border-radius: 0 5px 5px 0;
+	}
+	.b-reset{
+		width: 40px;
+		min-width: 40px;
+		height: 40px;
+		border-radius: 5px;
+		border: 1px solid $bdcolor;
+		background-color: $white;
+		line-height: 38px;
+		color:$point;
+		font-size: 1.25rem;
+		float: right;
+		padding: 0;
+	}
+	&.inline{
+		background: none;
+		padding:10px 0;
+		fieldset>div{
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+		.keyword-cate{
+			max-width: none;
+		}
+		select, input{
+			border:1px solid $bdcolor;
+		}
+		select{
+			width: 100%;
+		}
+		.btn-submit{
+			max-width: 120px;
+		}
+		.hotot{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			input[type=checkbox]{width: 0;}
+			i{margin: 0;}
+		}
+	}
+	&.flex-end{
+		border:1px solid $blue;
+		&.r{
+			border:none;
+		}
+		fieldset > div {
+			justify-content: flex-end;
+			> * {
+				flex-grow: initial;
+				justify-content: flex-end;
+			}
+		}
+		.t{
+			line-height: 40px;
+		}
+		.b-reset{
+			margin-left: 10px;
+		}
+	}
+	/*
+	&.align-left{
+		@include breakpoint($mdw){
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		fieldset{
+			@include breakpoint($mdw){
+				justify-content: flex-start;
+				>*{
+					flex-grow: inherit;
+				}
+			}
+		}
+		select{
+			min-width: 200px;
+		}
+		.deco-text{
+			margin-left: auto;
+			line-height: 40px;
+			font-weight: 500;
+			strong{
+				color: #ef181e;
+				font-weight: inherit;
+			}
+		}
+	}
+	&.type-tsh{
+		// 통합검색
+		@include breakpoint($lg){
+			padding : {
+				left:106px;
+				right:106px;
+			}
+		}
+		@include breakpoint($sm){
+			padding: {
+				top   :10px;
+				bottom:10px;
+			};
+			fieldset > div > * + * {
+				margin-top: 0;
+			}
+		}
+		.moresh{
+			i{font-size: 17px;}
+			@include breakpoint($mdw){
+				flex: 0 0 128px;
+				max-width: 128px;
+			}
+			@include breakpoint($sm){
+				display: inline-block;
+			}
+		}
+		.option{
+			@include breakpoint($mdw){
+				padding-top: 8px;
+				flex: 0 0 140px;
+				max-width: 140px;
+			}
+			@include breakpoint($sm){
+				display: inline-block;
+			}
+		}
+	}
+	.wf{
+		max-width: initial;
+		@include breakpoint($mdw){
+			flex: 0 0 36%;
+			max-width: 36%;
+		}
+		>select{
+			margin: auto!important;
+		}
+	} */
+}
+
+.inp-sh-set{
+	position: relative;
+	flex-grow: 1;
+	@include breakpoint($sm){
+		width: auto;
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+	input[type=text]{
+		width: calc(100% - 90px);
+		height: $form-height;
+		float: left;
+		border-top-right-radius: 0 !important;
+		border-bottom-right-radius: 0 !important;
+	}
+	&+*{margin-left: 6px;}
+}

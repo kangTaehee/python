@@ -1,0 +1,29 @@
+.datepicker.dropdown-menu {
+    border:2px solid $skyblue;
+}
+.datepicker.dropdown-menu th.next,
+.datepicker.dropdown-menu th.prev{
+    border:1px solid $skyblue;
+    border-radius: 3px;
+    font-size: 20px;
+}
+.datepicker.dropdown-menu .table-condensed{
+    border-collapse:separate;
+}
+
+.datepicker table tr td.day:not(.old, .today, .new, .active){
+    background-color: $thbgcolor;
+}
+.datepicker table tr td.today,
+.datepicker .month.focused {
+    background-color: $skyblue;
+    color:$white;
+}
+.datepicker-dropdown{
+    padding:6px;
+}
+.datepicker table thead tr th{ font-size: 14px;}
+.datepicker table thead tr:last-child{
+    border-bottom:1px solid $bdcolor;
+    margin-bottom: 5px;
+}

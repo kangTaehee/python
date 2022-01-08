@@ -1,0 +1,183 @@
+// search
+$shbgcolor		: #f2f7fb;
+
+$darkblue       : #000E18;
+$midnightblue 	: #1C2674;
+$point				: #005aab;
+$deepblue			: #284d9e;
+$blue				: #004889;
+$skyblue			: #0C9EBD;
+$skylight			: #00bce4; 
+$skywhite			: #EEF8FA;
+$babyblue			: #7FACD5;
+$lightblue         	: #F3FAFC;
+$infoboxbg			: #ebfafd;
+$body-font-color	: #666;//사이트 텍스트 컬러
+$grayblue 		    : #F2F7FB;
+$whiteblue         	: #F2FCFE;
+$bdcolor            : #ddd;//보더 컬러
+$orange             : #D8761F;
+$subway6            : #c7792e;
+$whiteorange        : #FDF8F4;
+$gray			    : #888;
+$green       	    : #009344;
+$red			    : #ed1b2f;
+$lightgray		    : #cfcfcf;
+$whitegray		    : #f1f1f1;
+$trgray		   		: #fafafa;
+
+$deepgray    	    : #333;
+$linegray			: #626971;
+$footgray			: #3b434e;
+$mediumgray			: #48515f;
+$graya7				: #a7a7a7;
+$borderwhite        : #D9E6F2;
+
+
+$bdtopcolor			: #005baa;
+$thbgcolor			: #F8FBFD;
+$dlbg				: #F8FBFD;
+$cellhovercolor		: #f4f4f4;
+$sh-bg-color: #f5fafb;
+
+// $linkcolor: #2e363a;
+$linkcolor        	: #333;
+$mineShaft			: #2e363a ;
+$muddyWaters		: #525d64;
+
+
+$btnbgcolor: #364150;
+
+// board view color
+$viewbdColor    : #d6d6d6;
+$viewbdtopcolor : #494b50;
+$viewheadBgcolor: #edf0f7;
+$viewheadcolor  : #333333;
+$btnBg       	: #1C262D;
+
+$white			: #fff;
+$black       	: #000;
+$cobalt         : #02728D;
+$lagoon         : #008890;
+$blinkpink      : #fa5778;
+
+$pink			    : #d0319b;
+//$blue 			: #2276d2;
+$lightred		    : #c54804;
+
+// background=color
+$bg_gray 			: #eff2f7;
+$txt_gray 			: #959CA1;
+
+// faq
+$faq-Q-dt-bgcolor : #fcfcfc;
+$faq-Q-bgcolor : #005baa;
+$faq-A-bgcolor: #0c9ebd;
+
+// lightred
+.lightred {color: $lightred; }
+.blue {color: $blue !important; }// search
+$shbgcolor		: #f2f7fb;
+
+$darkblue       : #000E18;
+$midnightblue 	: #1C2674;
+$point				: #005aab;
+$deepblue			: #284d9e;
+$blue				: #004889;
+$skyblue			: #0C9EBD;
+$skylight			: #00bce4; 
+$skywhite			: #EEF8FA;
+$babyblue			: #7FACD5;
+$lightblue         	: #F3FAFC;
+$infoboxbg			: #ebfafd;
+$body-font-color	: #666;//사이트 텍스트 컬러
+$grayblue 		    : #F2F7FB;
+$whiteblue         	: #F2FCFE;
+$bdcolor            : #ddd;//보더 컬러
+$orange             : #D8761F;
+$subway6            : #c7792e;
+$whiteorange        : #FDF8F4;
+$gray			    : #888;
+$green       	    : #009344;
+$red			    : #ed1b2f;
+$lightgray		    : #cfcfcf;
+$whitegray		    : #f1f1f1;
+$trgray		   		: #fafafa;
+
+$deepgray    	    : #333;
+$linegray			: #626971;
+$footgray			: #3b434e;
+$mediumgray			: #48515f;
+$graya7				: #a7a7a7;
+$borderwhite        : #D9E6F2;
+
+
+$bdtopcolor			: #005baa;
+$thbgcolor			: #F8FBFD;
+$dlbg				: #F8FBFD;
+$cellhovercolor		: #f4f4f4;
+$sh-bg-color: #f5fafb;
+
+// $linkcolor: #2e363a;
+$linkcolor        	: #333;
+$mineShaft			: #2e363a ;
+$muddyWaters		: #525d64;
+
+
+$btnbgcolor: #364150;
+
+// board view color
+$viewbdColor    : #d6d6d6;
+$viewbdtopcolor : #494b50;
+$viewheadBgcolor: #edf0f7;
+$viewheadcolor  : #333333;
+$btnBg       	: #1C262D;
+
+$white			: #fff;
+$black       	: #000;
+$cobalt         : #02728D;
+$lagoon         : #008890;
+$blinkpink      : #fa5778;
+
+$pink			    : #d0319b;
+//$blue 			: #2276d2;
+$lightred		    : #c54804;
+
+// background=color
+$bg_gray 			: #eff2f7;
+$txt_gray 			: #959CA1;
+
+// faq
+$faq-Q-dt-bgcolor : #fcfcfc;
+$faq-Q-bgcolor : #005baa;
+$faq-A-bgcolor: #0c9ebd;
+
+// lightred
+.lightred {color: $lightred; }
+.blue {color: $blue !important; }
+.blue2 {color: $bdtopcolor !important; }
+.skyblue {color: $skyblue !important; }
+.green {color: $green !important; }
+.gray {color: $gray !important; }
+.red {color: $red !important; }
+.black {color: $black !important; }
+.orange{ color: $orange !important;}
+.subway6{ color: $subway6 !important;}
+.white{ color: $white !important;}
+.bg_orange{background-color : $orange !important;}
+.bg_skyblue{background-color : $skyblue !important; }
+.bg_blue{background-color : $blue !important; }
+.bg_deepblue{background-color : $bdtopcolor !important; }
+.bg_green{background-color: $green !important;}
+.bg_gray{ background: $bg_gray !important; };
+.bg_whitegray{ background: $trgray; };
+.bg_red{background: $red !important;}
+.bg_white{ background: $white !important;}
+.blue2 {color: $bdtopcolor !important; }
+.skyblue {color: $skyblue !important; }
+.green {color: $green !important; }
+.gray {color: $gray !important; }
+.red {color: $red !important; }
+.black {color: $black !important; }
+
+.white{ color: $white !important;}

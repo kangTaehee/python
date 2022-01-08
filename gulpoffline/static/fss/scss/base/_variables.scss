@@ -1,0 +1,37 @@
+// font size
+$browser-context: 16; // Default html font size 설정
+$html-font-size	: 16px; // html font size 설정
+$body-font-size : 1.125rem; // 18px
+$fz-xs			: 0.875rem; // 14px
+$btn-font-size : 1.125rem;  // 18px
+$form-height   : 45px; // 폼, 폼에 들어가는 버튼 높이
+
+
+$xs                 : max-width 360px;
+$sm                 : max-width 749px;
+$md                 : max-width 1199px;
+$mdw             	: 750px;
+$mdf                : 750px 1023px;
+$lg                 : 1200px;
+$xl                 : max-width 1275px;
+$mw					: 1276px;
+
+// board list color
+$bd-topwidth : 2px;
+
+// input
+$form-height : 40px;
+// button
+$btn-height : $form-height;
+
+
+
+$m1:24px;
+$m2:34px;
+// input
+$formHeight         : 40px;
+
+
+$font-set		: 'Noto Sans', sans-serif, "AppleGothic","돋움","dotum",Helvetica,Arial,sans-serif;
+$heading-font	: 'Gmarket Sans', sans-serif, "맑은고딕","malgun gothic";
+$font-eng	    : 'Arial',sans-serif, "AppleGothic","맑은고딕","malgun gothic";

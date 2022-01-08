@@ -1,0 +1,170 @@
+/*paging*/
+// defalut
+$pagingActiveBg 		: $point;
+$pagingActiveColor 		: $white;
+$pagingActive-bdColor 	: #2e363a;
+$pagingbdcolor 			: #cecece;
+$pagingbgcolor 			: $white;
+$lmargin 				: 0;
+$width 					: 40px;
+$height					: 40px;
+
+// mobile
+$width-xs				: 25px;
+$width-sm				: 30px;
+$height-sm				: 30px;
+$lmargin-sm				: 2px;
+
+.pagination-set{
+	text-align:center;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	@include breakpoint($sm){
+		margin-top: 20px;
+	}
+}
+.pagination{
+	display:inline-block;
+	vertical-align:top;
+	padding-left:0;
+	text-align:center;
+	.i a{border: 1px solid $pagingbdcolor;}
+	>li{display:inline;}
+	>li>a,
+	>li>span{
+		position: relative;
+		float: left;
+		padding: 0;
+		text-decoration: none;
+		min-width: $width;
+		height: $height;
+		line-height: $height - 2px;
+		border: 1px solid $pagingbdcolor;
+		margin: 0;
+		color:#666;
+		margin-left: 2px;
+		border-radius: 5px;
+		@include breakpoint($sm){
+			min-width: $width-sm;
+			height: $height-sm;
+			line-height: $height-sm;
+			margin: 0 $lmargin-sm;
+		}
+	}
+	>li{
+		&.first>*,
+		&.prev>*,
+		&.next>*,
+		&.end>*{
+			min-width: $width;
+			&:before {
+				content: '';
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+			}
+			&:hover,
+			&:focus,
+			&:active{
+				z-index: 2;
+				background-color: #fff;
+			}
+			@include breakpoint($sm){
+				min-width: $width-sm;
+				height: $height-sm;
+				line-height: $height-sm - 2px;
+				background-size: auto 28px;
+				&:before {
+					width: $width-sm;
+					height: $height-sm;
+				}
+			}
+		}
+		@include breakpoint($sm){
+			>a{margin-bottom: 10px;}
+		}
+		.s span{position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); border: 0}
+	}
+	>li.first>*{
+		margin-right:0;
+		&:before {
+			background: url(/fss/fss/img/common/paging_first.png) no-repeat 50% 50%;
+		}
+		@include breakpoint($sm){margin-right: 3px}
+	}
+	>li.prev>* 	{
+		&:before {
+			background: url(/fss/fss/img/common/paging_prev.png) no-repeat 50% 50%;
+		}
+		margin-right:21px;
+		@include breakpoint($sm){
+			background-position: -24px 0;
+			margin-right: 4px;
+		}
+	}
+	>li.next>* 	{
+		&:before {
+			background: url(/fss/fss/img/common/paging_prev.png) no-repeat 50% 50%;
+			transform: scaleX(-1);
+		}
+		margin-left:21px;
+		@include breakpoint($sm){
+			background-position: -24px 0;
+			margin-left: 4px;
+		}
+	}
+	>li.end>* 	{
+		background-position: right 0;
+		@include breakpoint($sm){margin-left: 3px}
+		&:before {
+			background: url(/fss/fss/img/common/paging_first.png) no-repeat 50% 50%;
+			transform: scaleX(-1);
+		}
+	}
+	>li:first-child>a,
+	>li:first-child>span {margin-left: 0}
+	>li>a:hover,
+	>li>span:hover,
+	>li>a:focus,
+	>li>span:focus {
+		z-index: 2;
+		text-decoration: underline;
+		background-color: $pagingActiveBg;
+		color: $white;
+	}
+	// active
+	>.active{
+		>a,
+		>span {
+			@include breakpoint($sm){
+				line-height: $height-sm - 2px;
+			}
+		}
+		>a,
+		>span,
+		>a:hover,
+		>span:hover,
+		>a:focus,
+		>span:focus {
+			z-index: 3;
+			cursor: default;
+			border: 1px solid $pagingActiveBg;
+			background-color: $pagingActiveBg;
+			color: $pagingActiveColor;
+			box-sizing: border-box;
+		}
+	}
+	// disabled
+	>.disabled{
+		>span,
+		>span:hover,
+		>span:focus,
+		>a,
+		>a:hover,
+		>a:focus {
+			cursor: not-allowed;
+			opacity:0.7;
+			display:none;
+		}
+	}
+}

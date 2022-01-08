@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>금융감독원</title>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<link rel="stylesheet" href="css.css?v1">
+</head>
+<body style="margin:0;padding:0;">
+	<div style="margin:0 auto;height:auto;">
+		<div class="logo"><img src="\static\portal\img\logo_blue@3x.png" width="290" alt="" /></div>
+		<!-- <div style="font-size:13px;">
+			<p>※ Main A 시안의 경우 HTML5를 이용하여 제작되었습니다. <strong>IE 10버전 이상에서 최적화되어 제공</strong>되고 있습니다.</p>
+			<p>※ 시안은 chrome, safari, firefox 브라우저의 경우는 최적화 되어있습니다. <a href="https://www.google.com/intl/ko/chrome/browser/features.html" target="_blank"><strong>[chrome 브라우저 다운로드]</strong></a>, <a href="http://www.mozilla.or.kr/ko/firefox/channel/" target="_blank"><strong>[firefox 브라우저 다운로드]</strong></a></p>
+		</div> -->
+		<div>
+			<div class="sublist">
+				<a href="/fss/maina.html" target="_blank" title="새창열림"><i>메인 A</i><span style="background-image: url(images/gate_typeA.jpg)"></span></a>
+				<a href="/fss/mainb.html" target="_blank" title="새창열림"><i>메인 B</i><span style="background-image: url(images/gate_typeB.jpg)"></span></a>
+				<a href="/fss/mainc.html" target="_blank" title="새창열림"><i>메인 C</i><span style="background-image: url(images/gate_typeC.jpg)"></span></a>
+			</div>
+		</div>
+		<style>
+			.sublist {
+				text-align: center;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				height: 80vh;
+			}
+			.sublist a {
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				width: 340px;
+				height: 330px;
+				background: url(images/gate_04_off.jpg) 0 0 no-repeat;
+			}
+			.sublist a .ss {
+				top: 29px;
+			}
+			.sublist a:hover i {
+				background-color: #f07911;
+			}
+			.sublist a i {
+				display: block;
+				text-align: center;
+				position: absolute;
+				top: 240px;
+				width: 100%;
+				font-style: normal;
+				width: 154px;
+				margin: 0 auto;
+				left: 0;
+				right: 0;
+				background-color: #ccc;
+				color: #fff;
+				border-radius: 50px;
+				height: 42px;
+				line-height: 42px;
+				font-size: 18px;
+			}
+			.sublist a em {
+				display: block;
+				text-align: center;
+				position: absolute;
+				top: 290px;
+				width: 100%;
+				font-style: normal;
+				font-size: 13px;
+				color: #333;
+				width: 270px;
+				margin: 0 auto;
+				left: 0;
+				right: 0;
+				height: 42px;
+			}
+		</style>
+		<!-- <div class="sublist">
+			<a href="" target="_blank"><i>type C</i><span class="ss m3"></span></a>
+		</div> -->
+		<!-- <div class="flogo"><img src="images/logo-kr.png"  alt=""/></div> -->
+	</div>
+	<address>PROPOSED BY <span>UNIQUENESS AND PEOPLE</span></address>
+	<script>
+		$(document).ready(function (e) {
+			//공통 이미지 변경
+			function imgOn(item) {
+				var image = item.find("img");
+				var imgsrc = $(image).attr("src");
+				var on;
+				if (image.size() > 0) {
+					on = imgsrc.replace(/_off/, "_on");
+					$(image).attr("src", on);
+				}
+			}
+			function imgOff(item) {
+				var image = item.find("img");
+				for (var i = 0; i < image.length; i++) {
+					var imgsrc = $(image[i]).attr("src");
+					var off = imgsrc.replace(/_on/, "_off");
+					$(image[i]).attr("src", off);
+				}
+			}
+			$(".list li a").hover(function (e) {
+				imgOn($(this));
+			}, function (e) {
+				imgOff($(this));
+			});
+		});
+	</script>
+</body>
+</html>

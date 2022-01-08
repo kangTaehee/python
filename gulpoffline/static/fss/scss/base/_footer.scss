@@ -1,0 +1,189 @@
+#footer {
+	*::-webkit-scrollbar
+	{
+		width: 16px;
+		background-color: #F5F5F5;
+	}
+
+	*::-webkit-scrollbar-thumb
+	{
+		border-radius: 10px;
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+		background-color: #555;
+	}
+	*::-webkit-scrollbar-thumb:hover
+	{
+		background-color: #3b434e;
+	}
+}
+.footer-site { 
+	background-color: $footgray;
+	form{
+		width: 100%;
+		float: left;
+		border-bottom:1px solid $mediumgray;
+		button{
+			width: 60px;
+			line-height: 60px;
+			color: $white;
+			background-color: $mediumgray;
+		}
+		select{
+			width: calc(100% - 60px);
+			height: 60px;
+			float: left;
+			border-width: 0 1px;
+			border-color: $mediumgray;
+			color: $lightgray;
+			background: none;
+			option{
+				color:#000;
+			}
+		}
+	}
+	@include breakpoint($mdw){
+		form{
+			width: 50%;
+		}
+	}
+	@include breakpoint($lg){
+		height: 60px;
+		form{
+			width: 25%;
+			border: none;
+		}
+	}
+}
+
+.footer-nav {
+	.flogo{
+		width: 108px;
+		height: 45px;
+		margin-top: 30px;
+		margin-right: 50px;
+		float: left;
+		background: url(/fss/commons/img/logo-foot.png) 0 0 no-repeat;
+	}
+	.flogo-m{
+		display: none;
+		clear: both;
+		width: 108px;
+		height: 45px;
+		background: url(/fss/commons/img/logo-foot.png) 0 0 no-repeat;
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+	ul {
+		border-bottom: 1px solid $bdcolor;
+		width: calc(100% - 108px - 50px);
+		float: left;
+		margin-top: 15px;
+		padding-bottom: 15px;
+	}
+	li {
+		float: left;
+		position: relative;
+		&:first-child a{
+			padding-left: 0;
+		}
+		&:last-child a{
+			border:none;
+		}
+	}
+	a {
+		display: block;
+		padding: 0 20px;
+		line-height: 1;
+		font-size: 15px;
+		border-right: 1px solid $bdcolor;
+		text-transform: uppercase;
+		strong {
+			display: block;
+			color: #cf392a;
+			font-weight: 600;
+		}
+	}
+	@include breakpoint($md) {
+		li{
+			float: none;
+			display: inline-block;
+		}
+	}
+	@include breakpoint($sm) {
+		ul{
+			float: none;
+			width: 100%;
+		}
+		.flogo-m{
+			display: block;
+		}
+		.flogo{
+			display: none;
+		}
+		li{
+			padding: 0;
+			margin-right: 0;
+		}
+		a{
+			padding: 2px 6px;
+			margin-right: 5px;
+			font-size: 0.875rem;
+		}
+	}
+	@include breakpoint($xs) {
+		a{
+			padding: 2px 6px;
+			margin-right: 0;
+			font-size: 0.75rem;
+		}
+	}
+}
+.footer-bottom {
+	padding-bottom: 45px;
+	position: relative;
+	width: calc(100% - 108px - 50px);
+	float: left;
+	address {
+		font-size: 14px;
+		line-height: 22px;
+		padding-top:15px;
+		font-style: normal;
+		display: inline-block;
+		width: calc(100% - 110px);
+		margin-bottom: 55px;
+	}
+	.footer-mark{
+		float: right;
+		padding-top: 20px;
+	}
+	.mark-wa {
+		float: right;
+		background: url(/fss/commons/img/logo_wa.png) 0 0 no-repeat;
+		width: 76px;
+		height: 50px;
+		@include breakpoint($sm) {
+			position: absolute;
+			left: 137px;
+			top: 0;
+			background-size: contain;
+			height: 43px;
+		}
+	}
+	@include breakpoint($sm) {
+		width: 100%;
+		address {
+			width: 100%;
+			margin-top: -10px;
+			float: none;
+			span {
+				display: block;
+			}
+			i {
+				display: none;
+			}
+		}
+		.footer-mark{
+			display: none;
+		}
+	}
+}

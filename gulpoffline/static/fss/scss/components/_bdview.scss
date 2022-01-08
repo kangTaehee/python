@@ -1,0 +1,1583 @@
+.labelList {
+	label{
+		
+	}
+	label.etc {
+		span {
+			margin-right: 10px;
+		}
+		& + input[type='text'] {
+			width: 150px;
+		}
+	}
+	@include breakpoint($sm){
+		display: flex;
+		flex-direction: row;
+		// justify-content: center;
+		// align-items: center;
+		flex-wrap: wrap;
+		label{
+			margin: 5px;
+			white-space:nowrap;
+		}
+	}
+}
+
+input[type='text'],
+input[type='password'] {
+	width: 300px;
+	&.w100p {
+		width: 100%;
+	}
+	&.number4 {
+		width: 60px;
+	}
+	@include breakpoint($md) {
+		width: 100%;
+	}
+	@include breakpoint($lg) {
+		&.sigu {
+			width: 165px;
+		}
+		&.str2 {
+			width: 95px;
+		}
+	}
+}
+
+@include breakpoint($mdw) {
+	.dd-w-sm {
+		width: 130px;
+	}
+	.dd-w-lg {
+		width: 400px;
+	}
+}
+.filter {
+	@include clearfix();
+	position: relative;
+	text-align: right;
+	.count-total + & {
+		margin-top: -20px;
+	}
+	@include clearfix();
+	@include breakpoint($mdw) {
+		div {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+	}
+	* {
+		float: left;
+	}
+	select {
+		border: 0.063rem solid #ccc;
+		border-right-width: 0;
+		background-color: #fff;
+		width: 160px;
+		height: 35px;
+	}
+	button {
+		background-color: #949494;
+		color: #ffffff;
+		width: 60px;
+		height: 35px;
+		line-height: 35px;
+		padding: 0;
+		min-width: 0;
+	}
+	&.type-one {
+		margin: 20px 0 12px;
+	}
+}
+
+#content h2.subject {
+	&:before {
+		display: none;
+	}
+	font-size: 1.25rem;
+	letter-spacing: normal;
+	line-height: 1.8125rem;
+	letter-spacing: -0.028rem;
+	color: $black;
+	padding: 10px 20px;
+	margin: 0;
+	word-break: break-all;
+	text-align: center;
+	border-bottom: 1px solid $point;
+	@include breakpoint($sm) {
+		padding: 10px;
+	}
+	& + h2 {
+		border-bottom: none;
+		margin-bottom: 0;
+	}
+	&.has-right {
+		padding-right: 220px;
+	}
+	.badge {
+		vertical-align: text-top;
+	}
+}
+
+
+
+.bd-view {
+	h2 + & {
+		margin-top: 15px;
+	}
+	border-top: 2px solid $point;
+	border-top-width: $bd-topwidth;
+	border-bottom: 1px solid $bdcolor;
+	margin-bottom: 30px;
+	position: relative;
+	.subject-right {
+		min-height: 50px;
+		margin-top: -50px;
+		float: right;
+		padding: 12px 0;
+		dt,
+		dd {
+			display: inline-block;
+			line-height: 1em;
+			padding: 0 5px;
+		}
+		dt {
+			border-right: 1px solid $bdcolor;
+		}
+		dd {
+			margin-right: 20px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	.subject-sub{
+		margin: 0 !important;
+		padding: 12px 0;
+		color: #000 !important;
+		font-size: 18px;
+		font-weight: 400;
+		letter-spacing: -0.45px;
+		line-height: 1.3;
+		text-align: center;
+		border-bottom: 1px solid $bdcolor;
+		&::before{
+			display: none;
+		}
+	}
+	.dbdata+.subject-sub{
+		border-top: 1px solid $bdcolor;
+	}
+	h3 {
+	}
+	h2 + .table-dl {
+		border-top: 1px solid $point;
+	}
+	h2 + .table {
+		border-top: 1px solid $point;
+		margin-top: 0 !important;
+	}
+	.table-dl {
+		dt {
+			width: 140px;
+			padding-right: 0;
+			text-align: center;
+			background: $thbgcolor;
+			color: $black;
+		}
+		dd {
+			padding-left: 20px;
+			color: $gray;
+		}
+		dl {
+			display: block;
+			table-layout: fixed;
+			border-bottom: 1px solid $bdcolor;
+			width: 100%;
+			padding: 10px;
+			> * {
+				display: block;
+				padding-top: 13px;
+				padding-bottom: 15px;
+				line-height: 1.3;
+			}
+			@include breakpoint($mdw) {
+				padding: 0;
+				display: table;
+				> * {
+					display: table-cell;
+					word-break: break-word;
+				}
+			}
+			@include breakpoint($xl) {
+				dt{
+					width: 80px;
+				}
+			}
+			@include breakpoint($sm) {
+				dt,
+				dd {
+					width: 100%;
+					text-align: left;
+					padding-left: 20px;
+					padding-right: 20px;
+				}
+			}
+		}
+	}
+	.file-list {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+		border-bottom: 1px solid $bdcolor;
+		padding: 0;
+		padding-left: 30px;
+		@include breakpoint($sm) {
+			padding: 10px;
+		}
+		> * {
+			display: table-cell;
+			padding-top: 14px;
+			padding-bottom: 14px;
+		}
+		dd {
+			width: calc(100% - 84px);
+			padding-left: 20px;
+			padding-top: 10px;
+			vertical-align: top;
+			@include breakpoint($sm) {
+				width: 100%;
+				padding: 0;
+			}
+			.item {
+			}
+			a {
+			}
+		}
+	}
+	&.type-recoment {
+		border-bottom-width: 0;
+		.subject {
+			border-bottom: 1px solid $bdcolor;
+			padding-bottom: 16px;
+		}
+		.etc {
+		}
+	}
+}
+.df {
+	display: flex;
+	flex-flow: row nowrap;
+	.row-th {
+		width: 160px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $thbgcolor;
+		margin-bottom: 0;
+		border-bottom: 1px solid $bdcolor;
+		border-right: 1px solid $bdcolor;
+		font-size: 18px;
+		color: $black;
+	}
+	div {
+		width: 100%;
+	}
+	.table-dl & dt {
+		width: 160px;
+	}
+	@include breakpoint($sm) {
+		display: block;
+		.row-th {
+			width: 100%;
+			border-right-width: 0;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+		.table-dl & dl {
+			padding: 0;
+		}
+	}
+	&.df-foot {
+		p {
+			padding-top: 13px;
+			margin-bottom: 0;
+			padding-left: 20px;
+		}
+		@include breakpoint($lg) {
+			p {
+				line-height: 40px;
+			}
+			p,
+			.p-rt {
+				width: 50%;
+			}
+		}
+	}
+	&.df-wrap {
+		flex-flow: row wrap;
+		li {
+			float: left;
+			width: 40%;
+			margin: 0 5% 20px 5%;
+		}
+		strong {
+			display: block;
+			margin: auto;
+		}
+		@include breakpoint($mdw) {
+			width: 20%;
+		}
+	}
+	.market &{
+		width: 100%;
+		flex-flow: row wrap;
+	}
+}
+
+.dbdata {
+	min-height: 200px;
+	padding: 32px 20px;
+	word-break: break-all;
+	@include breakpoint($sm) {
+		padding: 15px 0;
+	}
+	&.type2 {
+		border-bottom: 1px solid $bdcolor;
+	}
+}
+.mh100 {
+	min-height: 100px;
+}
+.mh80 {
+	min-height: 80px;
+}
+
+.bd-view-nav {
+	border-width: 1px 0;
+	border-style: solid;
+	border-color: $bdcolor;
+	@include clearfix;
+	dl + dl {
+		border-top: 1px solid $bdcolor;
+	}
+	dl {
+		padding: 7px 0;
+		height: 50px;
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+		> * {
+			display: table-cell;
+			vertical-align: top;
+			line-height: 36px;
+		}
+		dt {
+			position: relative;
+			width: 110px;
+			color: $black;
+			font-size: 16px;
+			font-weight: 500;
+			letter-spacing: -0.24px;
+			padding-left: 30px;
+			@include breakpoint($sm) {
+				width: 90px;
+				padding-left: 15px;
+			}
+			&::before {
+				content: '';
+				position: absolute;
+				right: 0;
+				top: 50%;
+				margin-top: -9px;
+				width: 1px;
+				height: 18px;
+				background-color: #e6e6e6;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				margin-top: -3.5px;
+				right: 22px;
+				//@include sprite($bd-nav-prev);
+				@include breakpoint($sm) {
+					right: 15px;
+				}
+			}
+		}
+		dd {
+			letter-spacing: -0.24px;
+			padding-left: 20px;
+			@include breakpoint($sm) {
+				padding-left: 15px;
+			}
+			span {
+				@include ellipsis;
+				width: 100%;
+				vertical-align: middle;
+				font-weight: 300;
+			}
+			a {
+				@include ellipsis;
+				display: block;
+				width: 100%;
+			}
+		}
+		&.next {
+			dt {
+				&:after {
+					//@include sprite($bd-nav-next)
+				}
+			}
+			@include breakpoint($sm) {
+				border-top: 1px solid #dddddd;
+			}
+		}
+		@include breakpoint($sm) {
+			width: 100%;
+			padding: 10px 0;
+		}
+	}
+}
+
+.reqInfor {
+	color: $black;
+	text-align: right;
+	margin-bottom: 10px;
+}
+.req {
+	color: #525d64;
+	font-size: 15px;
+	font-weight: 400;
+	font-size: smaller;
+	&::before {
+		content: '＊ ';
+		color: red;
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 3px;
+		position: relative;
+	}
+	span {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		border: 0;
+	}
+}
+.count-total {
+	@include clearfix();
+	margin: 30px 0 15px;
+	font-weight: 300;
+	color: #757575;
+	.row & {
+		margin: 0;
+		padding-top: 4px;
+	}
+	strong {
+		font-weight: 500;
+		color: $point;
+	}
+	em {
+		color: #000000;
+	}
+	.keyword-count {
+		float: right;
+	}
+	p {
+		margin: 0;
+	}
+}
+.bd-top-set {
+	padding: 20px;
+	background-color: $thbgcolor;
+}
+.filegroup {
+	position: relative;
+	display: inline-block;
+	&.on .filegroup--box {
+		display: block;
+	}
+	a{
+		display: inline-block;
+		i{
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+	.filegroup--box {
+		display: none;
+		position: absolute;
+		z-index: 10;
+		right: 0;
+		width: 280px;
+		background-color: #fff;
+		border: 2px solid $skyblue;
+		text-align: left;
+		font-size: 0.938rem;
+		border-radius: 0.3125em 0 0.3125em 0.3125em;
+		@include breakpoint($sm) {
+			left: -44px;
+		}
+		h3 {
+			font-size: 1em;
+			background-color: $skyblue;
+			color: $white !important;
+			margin: 0 !important;
+			padding-left: 10px;
+			line-height: 1;
+			padding: 13px 15px !important;
+			font-weight: 300;
+			&:before {
+				display: none;
+			}
+		}
+		ul {
+			display: block;
+			width: 100%;
+			height: 100%;
+			padding: 10px;
+		}
+		li {
+			display: block;
+			// overflow: hidden;
+			@include clearfix();
+			& + li {
+				margin-top: 5px;
+			}
+			a i {
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+		}
+		.filegroup--box--close {
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			font-size: 20px;
+			text-align: center;
+			transition: all 0.3s;
+			color: $white;
+			&:focus,
+			&:active,
+			&:hover {
+				transform: rotate(90deg);
+			}
+			&:before {
+				content: '';
+				display: inline-block;
+				//@include sprite($ico-filebox-close);
+			}
+		}
+	}
+}
+.btn-set {
+	margin: 30px 0;
+	text-align: right;
+	&.c {
+		text-align: center;
+	}
+	&.l {
+		text-align: left;
+	}
+	.l {
+		float: left;
+	}
+	[class^='b-'] {
+		min-width: 120px;
+		// font-size: 18px;
+		@include breakpoint($sm){
+			min-width: 100px;
+		}
+	}
+}
+
+.file-lists {
+	.help {
+		clear: both;
+		width: 100%;
+	}
+}
+.file-add-plus {
+	float: right;
+	button {
+		width: 80px !important;
+	}
+}
+.file-add {
+	float: left;
+	width: calc(100% - 106px - 20px);
+	@include breakpoint($sm){
+		width:calc(100% - 66px - 20px);
+	}
+	[class^='b-'] {
+		height: 40px;
+		// line-height: 40px;
+	}
+	.b-add {
+		float: right;
+		width: 106px !important;
+		min-width: 0;
+		padding: 0;
+	}
+	.item {
+		margin-bottom: 5px;
+		& + .item {
+		}
+		@include clearfix();
+		input[type='file'] {
+			float: left;
+			width: calc(100% - 106px - 5px);
+			height: 40px;
+			border: 1px solid $bdcolor;
+		}
+		.b-del {
+			float: right;
+			width: 106px !important;
+			min-width: 0;
+			padding: 0;
+		}
+	}
+}
+
+.reg {
+	border-top: 2px solid $bdtopcolor;
+	border-top-width: $bd-topwidth;
+	margin-bottom: 30px;
+	input[type='text'] {
+		+ span {
+			line-height: 40px;
+			color: #888888;
+			padding-left: 10px;
+		}
+		@include breakpoint($mdw) {
+			&.w-name {
+				width: 200px;
+			}
+		}
+	}
+	input[type='date'] {
+		width: 100%;
+		&.date {
+			@include breakpoint($mdw) {
+				width: 140px;
+			}
+		}
+		&.md {
+			width: 220px;
+		}
+	}
+	input[type='number'] {
+		width: 100%;
+		&.membercount {
+			@include breakpoint($mdw) {
+				width: 200px;
+			}
+		}
+	}
+	select.location {
+		@include breakpoint($mdw) {
+			min-width: 200px;
+		}
+	}
+	textarea {
+		height: 80px;
+		width: 100%;
+		&.h {
+			height: 300px;
+		}
+	}
+	.subject-sub{
+		margin: 0 !important;
+		padding: 12px 0;
+		color: #000 !important;
+		font-size: 18px;
+		font-weight: 400;
+		letter-spacing: -0.45px;
+		line-height: 1.3;
+		text-align: center;
+		border-bottom: 1px solid $bdcolor;
+		&::before{
+			display: none;
+		}
+	}
+	> dl {
+		border-bottom: 1px solid $bdcolor;
+		@include breakpoint($mdw) {
+			display: table;
+			width: 100%;
+			table-layout: fixed;
+			> * {
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+		&.n {
+			> dt {
+				padding-top: 10px;
+			}
+			> dd {
+			}
+		}
+		> dt {
+			position: relative;
+			text-align: center;
+			padding: 20px 0 10px;
+			font-size: 1.125rem;
+			color: #222222;
+			font-size: 16px;
+			font-weight: 500;
+			letter-spacing: -0.24px;
+			vertical-align: top;
+			.dt-lg & {
+				width: 210px;
+			}
+			@include breakpoint($mdw) {
+				width: 160px;
+				padding: 13px 0;
+			}
+			label {
+				font-weight: inherit;
+			}
+			@include breakpoint($sm) {
+				width: auto;
+				text-align: left;
+			}
+			@include breakpoint($lg) {
+				background-color: $thbgcolor;
+			}
+		}
+		&:first-child {
+			border-top: 0;
+		}
+		> dd {
+			padding-bottom: 10px;
+			position: relative;
+			@include breakpoint($mdw) {
+				padding: 5px 20px;
+			}
+			.deco {
+				&::before {
+					content: '';
+					display: inline-block;
+					margin-right: 10px;
+					vertical-align: middle;
+				}
+				color: $muddyWaters;
+				font-size: 1.125rem;
+				font-weight: 700;
+				letter-spacing: normal;
+				line-height: 1.44;
+				text-indent: -15px;
+				padding-left: 15px;
+			}
+			&.dd-payment,
+			&.dd-payment form {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				width: 100%;
+				@include breakpoint($sm) {
+					align-items: flex-start;
+					.radio-group {
+						label {
+							display: block;
+							& + label {
+								margin-left: 0;
+								margin-top: 5px;
+							}
+						}
+					}
+				}
+			}
+			&.dd-dl{
+				padding: 0;
+				>dl{
+					@include breakpoint($mdw) {
+						display: table;
+						width: 100%;
+						table-layout: fixed;
+						border-left: 1px solid $point;
+						>*{
+							display: table-cell;
+							vertical-align: middle;
+						}
+					}
+					dt{
+						background-color: #F8FBFD;
+						text-align: left;
+						padding: 15px 10px 10px;
+						font-size: 1.125rem;
+						@include breakpoint($mdw) {
+							width: 130px;
+						}
+						color: #222222;
+						font-size: 16px;
+						font-weight: 500;
+						letter-spacing: -0.24px;
+						vertical-align: top;
+						@include breakpoint($sm) {
+							width: auto;
+						}
+					}
+					dd{
+						padding: 0 20px;
+						@include breakpoint($mdw) {
+							
+						}
+					}
+					& + dl{
+						border-top: 1px solid #ddd;
+					}
+				}	
+			}
+		}
+	}
+	select,
+	input[type='text'],
+	input[type='password'] {
+		height: 40px;
+	}
+	.inp-txt1 {
+		width: 100%;
+		max-width: 400px;
+	}
+	.deco {
+		padding: 4px 0;
+	}
+	&.w-dt dt {
+		@include breakpoint($mdw) {
+			width: 300px;
+		}
+	}
+	&.w-dt-md dt {
+		@include breakpoint($mdw) {
+			width: 220px;
+		}
+	}
+	// 개인정보수집동의
+	&.w-dt-md2 {
+		dt {
+			width: 220px;
+		}
+		@include breakpoint($md) {
+			dt,
+			dd {
+				display: block;
+				text-align: left;
+			}
+			dt {
+				width: auto;
+			}
+			dd {
+				padding: 0 0 10px;
+			}
+		}
+	}
+	.dialogs & {
+		input.w50p {
+			width: 50% !important;
+		}
+		.date-set {
+			input[type='date'] {
+				width: calc(50% - 8px);
+			}
+		}
+		.call-set {
+			input[type='text'] {
+				width: calc(33.33% - 8px);
+			}
+		}
+	}
+	&.box {
+		padding: 0;
+		margin-top: 40px;
+	}
+	@include breakpoint($mdw){
+		&.dt-r1{
+			dt{
+				border-right: 1px solid $bdcolor;
+			}
+		}
+	}
+}
+
+.post-set {
+	max-width: 900px;
+	@include clearfix();
+	span {
+		display: block;
+		&:nth-child(1) {
+			margin-bottom: 10px;
+			@include clearfix();
+			input {
+				float: left;
+				margin-right: 10px;
+				@include breakpoint($sm) {
+					width: calc(100% - 170px);
+				}
+			}
+		}
+		&:nth-child(2) {
+			float: left;
+			$a: 4/9 * 100%;
+			width: $a;
+			@include breakpoint($sm) {
+				width: 100%;
+			}
+		}
+		&:nth-child(3) {
+			float: left;
+			width: 5/9 * 100%;
+			padding-left: 10px;
+			@include breakpoint($sm) {
+				width: 100%;
+				padding-left: 0;
+				margin-top: 10px;
+			}
+		}
+	}
+	.post {
+		width: 200px;
+	}
+	.post-search {
+		display: inline-block;
+		vertical-align: top;
+		height: 50px;
+		line-height: 48px;
+		text-align: center;
+		border: 1px solid #464646;
+		background-color: #ffffff;
+		width: 160px;
+		background-color: #ffffff;
+		.ico-post {
+			width: 17px;
+			height: 16px;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 9px;
+			// background: url(/fss/portal/img/common/ico-post.png) center center no-repeat;
+		}
+	}
+	.post-default {
+		width: 100%;
+	}
+	.post-detail {
+		width: 100%;
+	}
+}
+.tel {
+}
+.tel-set {
+	max-width: 450px;
+	> * {
+		float: left;
+		vertical-align: top;
+	}
+	@include clearfix();
+	.tel1[type='text'],
+	select {
+		width: calc(40% - 40px);
+		@include breakpoint($lg) {
+			width: calc(40% - 52px);
+		}
+	}
+	input.tel {
+		width: 30%;
+	}
+	i {
+		text-align: center;
+		// line-height: 50px;
+		line-height: ($form-height - 2px);
+		@include breakpoint($md) {
+			width: 20px;
+		}
+		@include breakpoint($lg) {
+			width: 26px;
+		}
+	}
+	@include breakpoint($md) {
+		// padding-bottom: 5px;
+		.tel::nth-child(3) {
+		}
+	}
+}
+.nodata {
+	padding: 60px 0;
+	text-align: center;
+	border: 1px solid #606060;
+	border-width: 2px 0 1px;
+	> .mobile {
+		display: none !important;
+	}
+	.bd-list & {
+		border-width: 0;
+		padding-right: 44px;
+		width: 100%;
+		text-align: center;
+	}
+}
+.brochure-list {
+	border-bottom: 0.063rem solid #ccc;
+	.bu1 + & {
+		margin-top: -25px;
+	}
+	ul {
+		position: relative;
+		overflow: hidden;
+		@include breakpoint($md) {
+			margin-bottom: -1px;
+		}
+		@include breakpoint($lg) {
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				top: (384px * 2);
+				// background: url(/fss/portal/img/common/brochure-line.png) 0 0 no-repeat;
+			}
+			// background: url(/fss/portal/img/common/brochure-line.png) 0 385px no-repeat;
+		}
+	}
+	li {
+		float: left;
+		width: 25%;
+		min-width: 233px;
+		text-align: center;
+		height: 384px;
+		padding-top: 40px;
+		@include breakpoint($mdf) {
+			width: 50%;
+			// background: url(/fss/portal/img/common/brochure-line.png) 0 bottom no-repeat;
+		}
+		@include breakpoint($sm) {
+			width: auto;
+			height: auto;
+			float: none;
+			border-bottom: 1px solid $bdcolor;
+			padding-bottom: 40px;
+		}
+		.set {
+			position: relative;
+			display: block;
+			height: 243px;
+			.img {
+				display: block;
+				width: 160px;
+				height: 210px;
+				margin: 0 auto;
+				box-shadow: 0 0 0.813rem 0.125rem rgba(0, 0, 0, 0.07);
+				border: 0.063rem solid #ddd;
+				background-color: #fff;
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				background-position: center center;
+			}
+			.bar {
+				position: absolute;
+				width: 200px;
+				bottom: 7px;
+				width: 200px;
+				height: 27px;
+				left: 50%;
+				margin-left: -100px;
+				// background: url(/fss/portal/img/common/brochure-bar.png) center 0 no-repeat;
+			}
+		}
+		.title {
+			margin: 0 0 14px;
+			display: block;
+			color: $linkcolor;
+			font-size: 1.25rem;
+			font-weight: 700;
+			letter-spacing: normal;
+			line-height: 1;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+		&.nodata {
+			width: auto;
+			float: none;
+		}
+	}
+	a.down {
+		display: inline-block;
+		border-radius: 0.313rem;
+		background-color: #757575;
+		line-height: 1;
+		padding: 9px 0;
+		color: #ffffff;
+		width: 160px;
+		font-weight: 500;
+		vertical-align: top;
+	}
+	a.viewer-link {
+		margin-left: 8px;
+		border-radius: 0.313rem;
+		border: 0.063rem solid #949494;
+		display: inline-block;
+		vertical-align: top;
+		width: 35px;
+		height: 35px;
+		line-height: 35px;
+		i {
+			margin-top: 5px;
+			vertical-align: top;
+		}
+	}
+}
+.photo-box {
+	// text-align: center;
+}
+.agg-set {
+	border-top: 2px solid $bdtopcolor;
+	border-bottom: 1px solid $bdcolor;
+	background-color: #f6f6f6;
+	padding: 40px;
+	h3 {
+		margin-bottom: 10px;
+		&::before {
+			content: '';
+			width: 3px;
+			height: 20px;
+			background-color: #a27b4c;
+			border-radius: 1px;
+			display: inline-block;
+			margin-right: 14px;
+			vertical-align: middle;
+		}
+	}
+	.ovy {
+		margin: 15px 0;
+		border: 0.063rem solid #ccc;
+		background-color: #fff;
+		padding: 20px 18px;
+		max-height: 293px;
+	}
+}
+.ovy {
+	overflow: auto;
+}
+.btn-paging-group {
+	@include clearfix();
+	padding: 40px 0 0;
+	@include breakpoint($sm) {
+		padding: 20px 0;
+	}
+	.btn-set {
+		margin-top: 0;
+	}
+	.pagination-set {
+		// float: right;
+		margin: 0;
+		@include breakpoint($sm) {
+			margin-top: 15px;
+		}
+	}
+}
+.view {
+	margin-bottom: 40px;
+	border-top: 2px solid $bdtopcolor;
+	border-bottom: 1px solid $bdcolor;
+	background-color: $thbgcolor;
+	div {
+		dt {
+			text-align: center;
+			padding: 12px 20px;
+		}
+		dd {
+			box-sizing: border-box;
+			padding: 12px 20px;
+			background-color: #ffffff;
+			border-left: 1px solid $bdcolor;
+		}
+	}
+	@include breakpoint($mdw) {
+		> div {
+			display: flex;
+			flex-wrap: nowrap;
+			align-content: stretch;
+			> dl {
+				// flex: 1 1 0;
+				flex-basis: 50%;
+				// background-color: #f00;
+				display: flex;
+				dt {
+					flex-basis: 40%;
+					max-width: 40%;
+				}
+				dd {
+					flex-basis: 60%;
+					max-width: 60%;
+				}
+			}
+			dl.w {
+				flex-basis: 100%;
+				dt {
+					flex-basis: 20%;
+					max-width: 20%;
+				}
+				dd {
+					flex-basis: 80%;
+					max-width: 80%;
+				}
+			}
+		}
+		dl + dl > dt {
+			border-left: 1px solid $bdcolor;
+		}
+		> div + div {
+			border-top: 1px solid $bdcolor;
+		}
+	}
+	@include breakpoint($sm) {
+		> div {
+			> dl {
+				border-top: 1px solid $bdcolor;
+				display: flex;
+				dt {
+					flex-basis: 20%;
+					min-width: 100px;
+				}
+				dd {
+					flex-basis: 80%;
+				}
+			}
+			dl.w {
+				dt {
+					flex-basis: 20%;
+				}
+				dd {
+					flex-basis: 80%;
+				}
+			}
+		}
+	}
+	& + .dbdata {
+		border-bottom: 1px solid $bdcolor;
+		padding-bottom: 20px;
+	}
+}
+.bd-b {
+	border-bottom: 1px solid $bdcolor;
+}
+.view-line {
+	border-top: 2px solid $bdtopcolor;
+	border-bottom: 1px solid $bdcolor;
+	.s {
+		//display: table;
+		width: 100%;
+	}
+	dl {
+		font-size: 1.125rem;
+		display: flex;
+		flex: 2 2; // 50%;
+		//display: table-row;
+		> * {
+			// display: table-cell;
+			// vertical-align: top;
+			padding-top: 12px;
+			padding-bottom: 12px;
+			border-bottom: 1px solid $bdcolor;
+			@include breakpoint($sm) {
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}
+		}
+		dt {
+			width: 165px;
+			font-weight: 700;
+			padding-left: 30px;
+			span {
+				display: block;
+				font-weight: 400;
+				font-size: 1rem;
+				text-overflow: ellipsis;
+			}
+			@include breakpoint($sm) {
+				font-weight: 500;
+				width: 140px;
+				padding-left: 5px;
+			}
+		}
+		dd {
+			position: relative;
+			width: calc(100% - 165px);
+			padding-left: 20px;
+			word-break: keep-all;
+			word-wrap: break-word;
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 15px;
+				bottom: 15px;
+				width: 1px;
+				background-color: $bdcolor;
+			}
+			@include breakpoint($sm) {
+				width: calc(100% - 140px);
+			}
+		}
+		&.file-list {
+			@include breakpoint($sm) {
+				display: block;
+				width: 100%;
+				dt {
+					display: block;
+					display: none;
+				}
+				dd {
+					display: block;
+					width: 100%;
+					&::before {
+						content: '';
+						display: none;
+					}
+					padding-left: 5px;
+				}
+			}
+		}
+	}
+	.dbdata {
+		padding: 20px;
+		@include breakpoint($sm) {
+			padding: 15px 0;
+		}
+	}
+}
+.inp-group {
+	input[type='text'] {
+		border-right-width: 0;
+	}
+	[class^='b-'] {
+	}
+	@include breakpoint($sm) {
+		input[type='text'] {
+			width: calc(100% - 80px);
+		}
+		[class^='b-'] {
+			width: 80px;
+		}
+	}
+}
+.inp-sh-group {
+	@include clearfix();
+	input {
+		float: left;
+		width: calc(100% - 80px) !important;
+		border-right-width: 0;
+	}
+	.b-sh {
+		float: right;
+		width: 80px !important;
+		min-width: 0;
+	}
+}
+.input-help {
+	color: red;
+	text-indent: -18px;
+	padding-left: 18px;
+	&::before {
+		content: '※ ';
+	}
+}
+.editor-list-set {
+	margin-top: 40px;
+	h2 {
+		padding: 8px 0;
+		border-radius: 0.625rem 0.625rem 0 0;
+		background-color: #d82d36;
+		color: #fff;
+		font-size: 1.375rem;
+		font-weight: 700;
+		text-align: center;
+		i {
+			font-size: 1.563rem;
+		}
+		@include breakpoint($sm) {
+			font-size: 1.175rem;
+		}
+	}
+	ul {
+		@include clearfix();
+		padding: 40px 23px;
+		border-radius: 0 0 0.625rem 0.625rem;
+		border: 0.063rem solid #ccc;
+		border-top-width: 0;
+		background-color: #fff;
+		@include breakpoint($sm) {
+			padding: 25px 15px;
+		}
+		li {
+			@include breakpoint($mdw) {
+				float: left;
+				width: 33.333%;
+			}
+			@include breakpoint($sm) {
+				& + li {
+					margin-top: 20px;
+				}
+			}
+			span {
+				display: block;
+				&.img {
+					max-width: 273px;
+					margin: 0 auto;
+					padding: 12px 20px 18px 15px;
+					// background: url(/fss/portal/img/common/editor-img-bg.png) 0 0 no-repeat;
+					position: relative;
+					@include breakpoint($sm) {
+						background-size: contain;
+					}
+					&::before {
+						content: '';
+						width: 26px;
+						height: 27px;
+						// background: url(/fss/portal/img/common/POINT_O.png) 0 0 no-repeat;
+						position: absolute;
+						top: -4px;
+						left: calc(50% - 13px);
+						z-index: 2;
+					}
+					.o {
+						display: block;
+						background-size: cover;
+						&::before {
+							content: '';
+							padding-top: 71.42857142857143%;
+							display: block;
+						}
+					}
+				}
+				&.title {
+					text-align: center;
+					i {
+						border-radius: 30px;
+						color: #ffffff;
+						font-size: 1.25rem;
+						display: inline-block;
+						width: 31px;
+						height: 31px;
+						background-color: #525d64;
+						text-align: center;
+						line-height: 31px;
+						@include breakpoint($sm) {
+							width: 26px;
+							height: 26px;
+							font-size: 1rem;
+							line-height: 26px;
+						}
+					}
+					color: $linkcolor;
+					font-size: 1.25rem;
+					font-weight: 500;
+					line-height: 1.625rem;
+					@include breakpoint($sm) {
+						font-size: 0.95rem;
+					}
+				}
+			}
+		}
+	}
+}
+.view_dl {
+	border-top: 2px solid #004578;
+	dl {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+		border-bottom: 1px solid #c4c4c4;
+		> * {
+			display: block;
+			@include breakpoint($mdw) {
+				display: table-cell;
+			}
+		}
+		dt {
+			color: #000000;
+			font-family: Arial;
+			font-size: 18px;
+			font-weight: 700;
+			letter-spacing: -0.27px;
+			line-height: 25.29px;
+			text-align: center;
+			background-color: #eff2f7;
+			padding: 10px 0;
+			@include breakpoint($mdw) {
+				width: 200px;
+				padding: 18px 0;
+				position: relative;
+				&:after {
+					content: '';
+					position: absolute;
+					right: 0;
+					top: 18px;
+					width: 1px;
+					height: 24px;
+					background-color: rgba(196, 196, 196, 0.6);
+				}
+			}
+		}
+		dd {
+			padding: 10px 20px;
+		}
+	}
+}
+.select-box {
+	label {
+		padding-right: 10px;
+	}
+	select {
+		width: calc(100% - 155px) !important;
+		margin-top: 0;
+	}
+}
+
+.recoment {
+	border-top: 2px solid $bdtopcolor;
+	border-bottom: 1px solid $bdcolor;
+	font-size: 1.125rem;
+	dl {
+		display: table;
+		width: 100%;
+		border-bottom: 1px solid $bdcolor;
+		> * {
+			display: table-cell;
+			padding: 12px 0;
+		}
+		dt {
+			width: 90px;
+			font-weight: 700;
+			text-align: center;
+		}
+		dd {
+			position: relative;
+			padding-left: 20px;
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 15px;
+				bottom: 15px;
+				width: 1px;
+				background-color: $bdcolor;
+			}
+		}
+	}
+	.dbdata {
+		padding: 12px;
+	}
+}

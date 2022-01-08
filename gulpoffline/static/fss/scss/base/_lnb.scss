@@ -1,0 +1,162 @@
+.lnb{
+	float: left;
+	width: 228px;
+	color: #ffffff;
+	display: none;
+	//position: sticky;
+	//top:60px;
+	@include breakpoint($lg){
+		display: block;
+		margin-bottom: 100px;
+	}
+	h1{
+		color:$white;
+		/* background: $point url(/fss/portal/img/common/lnb_sub01.png) 158px 65px no-repeat; */
+		background-size: 46px auto;
+		width: 100%;
+		height: 130px;
+		border-radius: 0.625em;
+		text-align: left;
+		display: table;
+		padding-top: 40px;
+		padding-left: 25px;
+		margin-bottom: 5px;
+		@include headingfont;
+	}
+	a{display: block;}
+	>ul{
+		border:1px solid $bdcolor;
+		border-radius: 1.25em;
+		overflow: hidden;
+		>li{
+			border-bottom: 1px solid#cecece;
+			&:last-child{
+				border: none;
+			}
+			&.on{
+				>a{
+					&:hover,
+					&:active,
+					&:focus{
+						&::after{
+							transform: rotate(180deg);
+						}
+					}
+					background-color: $orange;
+					color:$white;
+					border-top-right-radius: 10px;
+					border-bottom-right-radius: 10px;
+				}
+				>ul{
+					display: block;
+				}
+				a::after{
+					transform: rotate(180deg);
+					opacity: 1;
+				}
+			}
+			>a{
+				display: block;
+				padding: 0 10px 0 20px;
+				line-height: 60px;
+				font-weight: 700;
+				font-size: 18px;
+				position: relative;
+				&:after{
+					position: absolute;
+					top: calc(50% - 8px);
+					right: 20px;
+					content:'\f107';
+					@include la;
+					transition: transform .3s;
+					opacity: .5;
+				}
+			}
+			>ul{
+				padding: 10px 0;
+				border-radius: 5px;
+				display: none;
+				>li{
+					>a{
+						position: relative;
+						line-height: 30px;
+						padding-left: 38px;
+						text-indent: -38px;
+						word-break: break-word;
+						&:before{
+							content:'';
+							display: inline-block;
+							width: 5px;
+							height: 5px;
+							border-radius: 50%;
+							vertical-align: middle;
+							margin-left: 20px;
+							margin-right: 13px;
+							background-color: $bdcolor;
+						}
+					}
+					&.on>a{
+						// background-color: #505d63;
+						color: $orange;
+						&::before{
+							// @include sprite($lnb-bu)
+							background-color: $orange;
+						}
+					}
+					&.on>ul{
+						display: none;
+					}
+					>ul{
+						display: none;
+						background: #dadada;
+						margin-left: 20px;
+						margin-right: 10px;
+						margin-bottom: 5px;
+						padding:5px 0;
+						border-radius: 5px;
+						>li{
+							>a{
+								padding-left: 10px;
+								padding-right: 10px;
+								line-height: 30px;
+								&:before{
+									content:'- ';
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	a.lnb-depth1{
+		padding: 10px;
+		color: #ffffff;
+		font-size: 1.125rem;
+		font-weight: 500;
+		letter-spacing: -0.028rem;
+		line-height: normal;
+	}
+	a.lnb-depth2{
+		font-size: 0.875rem;
+		font-weight: 400;
+		color: #fff;
+		letter-spacing: -0.022rem;
+		line-height: 1.3;
+		padding: 6px 6px 7px 16px;
+		transition: all 0.3s ease-in-out;
+		border-radius: 0.938rem;
+		&:hover,
+		&:focus{
+			background-color: #2e363a;
+			// color: #ffffff;
+		}
+		// &::before{
+		// 	content: '';
+		// 	content: '';
+		// 	display: inline-block;
+		// 	vertical-align: middle;
+		// 	margin-right: 10px;
+		// }
+	}
+}

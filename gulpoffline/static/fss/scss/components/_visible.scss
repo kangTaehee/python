@@ -1,0 +1,41 @@
+.visible-pc{
+	display: none;
+	@include breakpoint($lg){
+		display: block;
+	}
+}
+.visible-tablet{
+	display: none;
+	@include breakpoint($md){
+		display: block;
+	}
+}
+.hide-sm{
+	@include breakpoint($sm){
+		display: none;
+	}
+}
+br.mobile{
+	display: none;
+	@include breakpoint($sm){
+		display: inline;
+	}
+}
+br.pc {
+	display: none;
+	@include breakpoint($lg){
+		display: inline;
+	}
+}
+.mt1 {
+	margin-top: 20px;
+}
+.ml1{
+	margin-left: 24px;
+}
+.visible-mobile-ib{
+	display: none;
+	@include breakpoint($sm){
+		display: inline-block;
+	}
+}

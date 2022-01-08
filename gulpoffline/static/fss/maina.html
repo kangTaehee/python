@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/fss/fss/css/maina.css">
+	<script src="/fss/jslibrary/jquery-3.5.1.min.js"></script>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="w">
+			<div class="nav section-nav">
+				<a data-index=0 href="#" class="active"><i></i>Home</a>
+				<a data-index=1 href="#"><i></i>민원·참여</a>
+				<a data-index=2 href="#"><i></i>금감원소식</a>
+				<a data-index=3 href="#"><i></i>금감원소개</a>
+				<i class="mouse">
+					<i class="whell bounce animated"></i>
+				</i>
+
+
+
+			</div>
+			<div class="header">
+			</div>
+			<div class="wheel section section1">
+				<img src="/fss/img/main_typeA_1.png" alt="">
+			</div>
+			<div class="wheel section section2">
+				<img src="/fss/img/main_typeA_2.png" alt="">
+			</div>
+			<div class="wheel section section3">
+				<img src="/fss/img/main_typeA_3.png" alt="">
+			</div>
+			<div class="wheel section section4">
+				<img src="/fss/img/main_typeA_4.png" alt="">
+			</div>
+			<div class="wheel section5">
+				<div class="footer">
+					<img src="/fss/img/main_typeA_footer.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<aside>
+		<img src="/fss/img/a-quick.png" alt="">
+	</aside>
+	<script>
+		$('aside').click(function (e) {
+			e.preventDefault();
+			$(this).toggleClass('active')
+
+		});
+	</script>
+
+	<script src="/fss/unpl-util.js"></script>
+	<script src="/fss/maina.js"></script>
+	<script src="/fss/jslibrary/greensock/gsap.min.js"></script>
+	<script src="/fss/jslibrary/greensock/DrawSVGPlugin.min.js"></script>
+	<script src="/fss/jslibrary/greensock/TextPlugin.min.js"></script>
+	<script src="/fss/jslibrary/greensock/EasePack.min.js"></script>
+	<script src="/fss/jslibrary/greensock/MotionPathPlugin.min.js"></script>
+	<script src="/fss/jslibrary/greensock/MotionPathHelper.min.js"></script>
+	<script src="/fss/jslibrary/greensock/GSDevTools.min.js"></script>
+	<script>
+		// .whell
+		mainnav = gsap.timeline();
+		mainnav.from('.section-nav', 0.5, { left: -10, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.0')
+		// mainnav.from('.mouse', 0.5, { top: -10, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.0')
+		// mainnav.from('.whell', 0.5, { top: -10, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.0')
+		mainnav.from('aside', 0.5, { right: -580, rotateY: 0, opacity: 0, duration: 0, ease: Back.easeInOut.config(1.7) }, '-=0.0')
+
+		function updateSlider(params) {
+			console.log(params)
+		}
+		//Animation (super easy)
+tl = new TimelineMax({repeat:-1, onUpdate:updateSlider});
+// tl.from('.whell', 0.5, {translate: -3,  ease: Back.easeInOut.config(1.7)})
+// tl.to('.whell', 0.5, {top: 15,  ease: Back.easeInOut.config(1.7)})
+//spin each basket in the opposite direction of the ferris wheel at same rate (no math)
+// tl.to($(".basket"), 20, {rotation:"-=360",  ease:Linear.easeNone},0)
+
+	</script>
+</body>
+
+</html>

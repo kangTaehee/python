@@ -1,0 +1,103 @@
+.file-list--set{
+	.item{
+		a{
+			vertical-align: top;
+			margin-right: 5px;
+			color: $gray;
+			line-height: 30px;
+			&:hover,
+			&:focus,
+			&:active{
+				color:$point;
+			}
+			i{
+				vertical-align: top !important;
+				margin-top: 4px!important;
+			}
+			.file-name{
+				.bd-view &,
+				.view &
+				{width: auto;max-width: none;}
+			}
+		}
+		a.file-download{
+			@include breakpoint($md){
+				display: inline;
+				.file-name{
+					display: inline;
+				}
+			}
+		}
+
+	}
+}
+
+.file-name{
+	display: inline-block;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+	line-height: (26/16);
+	vertical-align: middle;
+	max-width: calc(100% - 70px);
+	@include breakpoint($md){
+		white-space: normal;
+	}
+	i{
+		vertical-align: middle;
+	}
+	
+	.filegroup--box &{
+	}
+}
+.filedown{
+	padding: 0 22px;
+	border-radius: 0.313rem;
+	background-color: #757575;
+	color: #fff;
+	font-weight: 500;
+	height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 35px;
+}
+.file-download{
+	vertical-align: middle;
+	i{
+		vertical-align: top;
+	}
+}
+.viewer-link{
+	display: inline-block;
+	vertical-align: middle;
+	i{
+		vertical-align: top;
+	}
+	.cell-file2 &{
+		border: 0.063rem solid #949494;
+		height: 35px;
+		i{
+			margin-top: 6px;
+		}
+	}
+}
+.btn-filedel{
+	height: 26px;
+	height: 22px;
+	width: 22px;
+	// background-color: $red;
+	color: #ffffff;
+	color: $red;
+	// border: 1px solid $red;
+	border: 1px solid #141414;
+	border-radius: 5px;
+	display: inline-block;
+	vertical-align: middle;
+	// padding: 0 5px;
+	line-height: 1;
+	&::before{content: '\f2ed';
+		@include la;
+		font-size: 20px;		
+	}
+
+}

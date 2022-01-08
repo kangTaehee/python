@@ -1,0 +1,77 @@
+/* list */
+.galleryList {overflow:hidden;color:#737373;margin:0 -15px;}
+.galleryList li{float:left;width:33.33%;padding:0 10px;height:285px;
+	margin-bottom:5px;
+	div{
+		padding:5px;
+
+	}
+}
+
+.galleryList li a img{height:210px;}
+.galleryList li a{
+	display:block;
+	border:1px solid $bdColor;
+	// max-width:282px;
+	text-align:center;
+	padding:5px;
+}
+.galleryList li p,
+.galleryList li .tit{padding:10px 0 5px 0;font-size:14px;font-weight: bold;display: block;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.galleryList li span{font-size:12px;}
+.galleryList li .cate{padding-top: 10px;}
+.galleryList li .subject{font-size: 14px;font-weight: 600;width: 210px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+.galleryList li span.small{display: inline;}
+.galleryList li span.white{color:#fff !important}
+.galleryList li .btn_area{margin:10px 0}
+
+.galleryView{width:100%;border-bottom:1px solid #e6e6e6; border-top:2px solid #494949;margin-top: 30px;}
+#content .galleryView>h2{
+	background:#fafafa;
+	background-image:none;
+	font-size:16px;
+	text-align:center;
+	font-weight:600;
+	border-bottom:1px solid #e6e6e6;
+	margin:0;
+	padding:13px 0;
+}
+.galleryView>div{border-bottom:1px solid #e6e6e6;padding:10px}
+.galleryView dl{overflow:hidden}
+.galleryView dt{float:left;font-weight:bold;}
+.galleryView dd{float:left;padding-left:5px}
+.galleryView dd.wid{width:200px}
+.galleryView .point{text-indent:0}
+.galleryView .point, .galleryView .point a{color:#EF6D17}
+.galleryView .dbdata{padding:45px 30px;line-height:179%}
+.galleryView .dbdata img{max-width:710px}
+
+// view
+.sliderMc{position:relative;z-index:10;
+	width:800px;
+	margin: 20px auto;
+	height:560px;overflow:hidden;padding:20px;}
+.sliderMc .thumbs{position:relative;z-index:10;width:590px;height:540px;float:left; overflow:hidden;}
+.sliderMc .thumbs>div{position:relative;z-index:10;width:596px;overflow:hidden;float:left;height:540px;}
+.sliderMc .thumbs>div a{display:block;padding:5px;border:2px solid #cacaca;text-align:center;}
+.sliderMc .thumbs>div a img{width:auto;max-height:518px;max-width:100%;}
+
+.sliderMc .descSet{position:absolute;left:0;top:0;width:210px;height:304px;padding:38px 20px; background:url(../images/mains/opacity60.png);}
+.sliderMc .descSet a, .sliderMc .descSet h2, .sliderMc .descSet p, .sliderMc .descSet span{color:#fff; font-size:12px;line-height:18px;}
+.sliderMc .descSet .stitle{font-size:15px;line-height:20px; margin-top:8px;margin-bottom:20px}
+.sliderMc .descSet h2{display:inline-block;line-height:20px;background:#ed1c24; padding:0 5px;}
+
+.thumbsList{width:110px;height:470px;overflow:hidden;margin-top:33px;float:right;}
+.thumbsList li{display:inline-block;float:left;margin-bottom:9px;overflow:hidden;width:100%;height:80px;margin-bottom:10px;}
+.thumbsList li img{vertical-align:top;height:70px;}
+.thumbsList li a{border:3px solid #fff;display:block;overflow:hidden;text-align:center;}
+.thumbsList li a:hover, 
+.thumbsList li a:focus, 
+.thumbsList li a:active, 
+.thumbsList li.on a{border-color:$point;}
+.sliderMcCtrl .prevVs{position:absolute;z-index:50;top:0; right:20px; background:url(/fss/ucms/img/photoCtrlUp.png) no-repeat;width:111px;height: 23px;}
+.sliderMcCtrl .nextVs{position:absolute;z-index:50;bottom:0; right:20px; background:url(/fss/ucms/img/photoCtrlDown.png) no-repeat; width:111px;height: 23px;}

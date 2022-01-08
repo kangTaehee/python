@@ -1,0 +1,294 @@
+$btn: '[class^=b-]';
+#{$btn}, 
+.btn {
+	min-width: 120px;
+	display: inline-block;
+	min-height: $formHeight;
+	line-height: 1;
+	vertical-align: middle;
+	padding: 10px;
+	background-color: #005aab;
+	border: none;
+	border-radius: 0.3125rem;
+	font-size: 18px;
+	text-align: center;
+	text-indent: 0 !important;
+	color: #fff;
+	@include breakpoint($md) {
+		min-width: 80px;
+	}
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+		color: #fff;
+		background-color: #005aab;
+	}
+	table & {
+		min-height: 34px;
+		//line-height: 32px;
+		padding: 10px;
+		min-width: 80px;
+		border: 1px solid #005baa;
+		background-color: #ffffff;
+		color: #005baa;
+	}
+	.reg & {
+		min-height: 34px;
+		//line-height: 32px;
+		padding: 10px;
+		min-width: 80px;
+		border: 1px solid #005baa;
+		background-color: #ffffff;
+		color: #005baa;
+	}
+	&.sm {
+		padding: 5px;
+		min-height: inherit;
+		line-height: 26px;
+	}
+	&.md {
+		padding: 10px 15px !important;
+	}
+	&.lg {
+		padding: 5px 90px !important;
+		min-height: 50px;
+		line-height: 50px;
+		@include breakpoint($sm){
+			padding: 5px !important;
+		
+		}
+	}
+	&.w-a{
+		width: auto !important;
+	}
+	&.w-lg {
+		width: 100% !important;
+		@include breakpoint($lg) {
+			width: 390px !important;
+		}
+		& + .w-lg {
+			margin-top: 5px;
+		}
+	}
+}
+#{$btn}{
+	&.b-btn {
+		background: $skyblue;
+		color: $white;
+		&.dark {
+			background: $midnightblue;
+		}
+	}
+	&.b-point {
+		background: $point;
+		color: $white;
+		line-height: 40px;
+		padding: 0 30px;
+	}
+	&.b-refer {
+		background-color: $white;
+		color: $blue;
+		border: 1px solid $blue;
+		border-radius: 5px;
+	}
+	&.b-down {
+		background-color: $skyblue;
+		border: 1px solid $skyblue;
+		font-weight: 400;
+		&:before {
+			content: '';
+			@include la;
+			display: inline;
+			margin-right: 10px;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			border: 1px solid $blue;
+			color: $point;
+			background-color: $white;
+			text-decoration: none;
+		}
+		&.sm {
+			@include breakpoint($sm) {
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+		}
+		&.md{
+			@include breakpoint($md) {
+				width: 180px;
+			}
+		}
+		&.r {
+			&::before {
+				display: none;
+			}
+			&::after {
+				content: '';
+				@include la;
+				display: inline;
+				margin-left: 10px;
+			}
+		}
+	}
+	&.b-link {
+		background-color: #6274b2;
+		padding-left: 40px;
+		padding-right: 40px;
+		&:after {
+			content: '';
+			@include la;
+			display: inline;
+			margin-left: 10px;
+		}
+		td & {
+			padding-left: 4px;
+			padding-right: 4px;
+			text-indent: 0;
+		}
+		&.s {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+		p > & {
+			margin-top: -10px;
+			margin-bottom: -10px;
+		}
+	}
+	&.b-chkAll {
+		background-color: #6274b2;
+	}
+	&.b-write {
+		background-color: #fff;
+		color: #000;
+		border: 1px solid $bdcolor;
+	}
+	&.b-apply {
+		background-color: #fff;
+		color: #000;
+		border: 1px solid $bdcolor;
+	}
+	&.b-move {
+		background-color: $green;
+		color: #fff;
+		border: 1px solid $green;
+	}
+	&.b-report {
+		background-color: $orange;
+		color: #fff;
+		border: 1px solid $orange;
+	}
+	&.b-del {
+		background-color: #7f7f7f;
+		table & ,
+		.reg & {
+			border: 1px solid #005baa;
+			background-color: #ffffff;
+			color: #005baa;
+		}
+	}
+	&.b-add {
+		background-color: #7f7f7f;
+		table & ,
+		.reg & {
+			border: 1px solid #005baa;
+			background-color: #ffffff;
+			color: #005baa;
+		}
+	}
+	&.b-cancel {
+		background-color: $white;
+		color: $point;
+		border: 1px solid $point;
+	}
+	&.b-save {
+		background-color: $skyblue;
+		color: $white;
+	}
+	&.b-edit {
+		background-color: $white;
+		color: $skyblue;
+		border: 1px solid $skyblue;
+	}
+	&.b-join {
+		background-color: #fff;
+		color: #005aab;
+		// background: url(/fss/ucms/img/ico-arrRight.png) 152px center no-repeat;
+		width: 180px;
+		border: 1px solid #000;
+		text-align: left;
+		height: 50px;
+	}
+	&.b-arr {
+		margin-left: 10px;
+		border: 1px solid #000;
+		padding: 15px 67px 15px 20px;
+		line-height: 1;
+		background: #fff;
+		color: #141414;
+		position: relative;
+		&:after {
+			content: '';
+			width: 8px;
+			height: 14px;
+			// background: url('/fss/ucms/img/ico-arrRight.png') right center no-repeat;
+			position: absolute;
+			right: 20px;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+		}	
+	}	
+}
+
+.url-link {
+	margin: 20px 0;
+	background: #e7ebec url(/fss/ucms/img/ico-doc.png) 20px center no-repeat;
+	line-height: 1;
+	padding: 12px 50px 12px 45px;
+	color: #005aab;
+	font-size: 16px;
+	font-weight: bold;
+	display: inline-block;
+	box-shadow: 1px 2px 0 0 hsla(0, 0%, 0%, 0.25);
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		right: 20px;
+		top: 13px;
+		width: 8px;
+		height: 14px;
+		background: url(/fss/ucms/img/ico-arrRight.png) 0 0 no-repeat;
+	}
+	// &.blank:after,
+	// &[target='_blank']:after {
+	// }
+}
+
+//
+[class*='ico-'] {
+	&:before {
+		display: inline-block;
+		font-style: normal;
+		margin-right: 6px;
+		@include la;
+	}
+}
+/* .go {
+	background: url(/fss/portal/img/common/ico-sitego.png) 0 0 no-repeat;
+	background-size: 17px;
+	width: 17px;
+	height: 17px;
+	display: inline-block;
+}
+.quickview {
+	line-height: 1;
+	vertical-align: middle;
+	span {
+		padding: 6px 15px;
+		display: inline-block;
+		border: 1px solid #000;
+	}
+} */

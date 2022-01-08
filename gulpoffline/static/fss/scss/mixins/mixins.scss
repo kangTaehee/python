@@ -1,0 +1,306 @@
+
+@mixin mw {
+	max-width: 1276px;
+	margin: 0 auto;
+}
+@mixin headingfont() {
+	font-family: $heading-font;
+	font-weight: 300;
+}
+@mixin la() {
+	font-family: 'Line Awesome Free';
+	font-weight: 900;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1;
+}
+@mixin fa() {
+	font-family:"FontAwesome","dotum",Helvetica,Arial,sans-serif;
+}
+@mixin ti() {
+	font-family:"themify","dotum",Helvetica,Arial,sans-serif;
+}
+@mixin clearfix() {
+	display:block;
+	&:before,
+	&:after{content:"."; display:block; height:0; clear:both; visibility:hidden }
+}
+@mixin shadow() {
+	border-radius: 3px;
+	box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.05);
+}
+@mixin ellipsis(){ overflow:hidden; white-space:nowrap; text-overflow:ellipsis; display:inline-block; }
+
+@mixin background-image-retina($file, $type, $width:auto, $height:auto) {
+	background-image: url($file + '.' + $type);
+	@media (-webkit-min-device-pixel-ratio: 2) {
+		& {
+		background-image: url($file + '@2x.' + $type);
+		background-size: $width $height;
+		}
+	}
+}
+
+@function per($size , $contex : $mdwidth) {
+	//Default font size on html element is 100%, equivalent to 16px;
+	@return #{$size / $contex * 100%};
+}
+// pixel to em
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+@mixin box($w:1px, $padding:30px 40px){
+	position: relative;
+	border: $w solid $midnightblue;
+	background-color: $thbgcolor;
+	padding: $padding;
+	border-radius: 5px;
+	margin-top: 16px;
+}
+
+@mixin aspectRatio($w , $h) {
+	position: relative;
+	overflow: hidden;
+	border-radius: 5px;
+	overflow: hidden;
+	&::before{
+		content: '';
+		display: block;
+		height: 0;
+		padding-top: per($h,$w);
+	}
+	img{
+		position: absolute;
+		left: 0;
+		top: 50%;
+		width: 100%;
+		vertical-align: top;
+		transform: translateY(-50%);
+	}
+}
+
+@mixin hoverOpercity($op:.7, $t:.3s) {
+	img{
+		transition: all $t ease-out;
+		transform: translateY(-50%);
+	}
+	&:hover,
+	&:active,
+	&:focus{
+		.photo-img{
+			border-color: $skyblue;
+			transition: all 1s ease-out;
+			box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+		}
+		img{
+			opacity: $op;
+		}
+	}
+}
+@mixin topline() {
+	position: relative;
+	margin-top: 30px;
+	&::after{
+		content: '';
+		position: absolute;
+		top: -15px;
+		left: 0;
+		width: 100%;
+		height: 0;
+		border-top: 1px solid $bdcolor;
+	}
+}
+@mixin bu1 {
+
+}
+@mixin bu2 {
+	color: #2e363a;
+	font-size: 1.125rem;
+	font-weight: 700;
+	line-height: 1.5;
+	@include bu-arr();
+}
+@mixin bu-arr {
+	position: relative;
+	padding-left: 15px;
+	&::before{
+		content: '';
+		position: absolute;
+		top: 10px;
+		left: 0;
+		//@include sprite($fa-chevron-right);
+	}
+}
+@mixin bu-dot {
+	position: relative;
+	padding-left:13px;
+	&::before{
+		content: '';
+		position: absolute;
+		top: 12px;
+		left: 0;
+		width:  4px;
+		height: 4px;
+		background-color: #000;
+	}
+}
+@mixin list-arr($align : middle) {
+	&::before{
+		content: '';
+		background: url(/fss/portal/img/common/list-arr.png) 0 0 no-repeat;
+		width: 14px;
+		height: 14px;
+		display: inline-block;
+		vertical-align: $align;
+		margin-right: 5px;
+	}
+}
+@mixin bu-dot2 {
+	position: relative;
+	padding-left:15px;
+	&::before{
+		content: '';
+		position: absolute;
+		top: 11px;
+		left: 0;
+		width:  5px;
+		height: 5px;
+		border-radius: 3px;
+		background-color: #e02e38;
+	}
+
+}
+
+// hover line Animation width, bottom, left, border-width, border-color;
+// ex @include hover-line(calc(100% - 14px), 5px, 0, 2px, $point);
+@mixin hover-line($w, $b:0, $l:0, $border-w:3px, $border-c:$point) {
+	span{
+		display: inline-block;
+		position: relative;
+	}
+	span::after{
+		content: '';
+		position: absolute;
+		width: $w;
+		bottom: $b;
+		left: $l;
+		border-bottom: $border-w solid $border-c;
+		transform: scaleX(0);
+		transform-origin: 0 0;
+		transition: transform .3s ease-out;
+	}
+	&:focus,
+	&:hover{
+		span::after{
+			content: '';
+			position: absolute;
+			transform: scaleX(1);
+		}
+	}
+	&.on span::after{
+		transform: scaleX(1);
+		font-weight: 700;
+	}
+}
+
+@mixin hover-bg {
+	position: relative;
+	&:before {
+		content: "";
+		background: #7FDBFF;
+		position: absolute;
+		width: 100%;
+		height: 5px;
+		bottom: 0;
+		left: 0;
+		border-radius: 5px;
+		transform: scaleX(0);
+		animation: 1.4s forwards no-hover-v linear;
+		animation-fill-mode: forwards;
+		z-index: -1;
+	}
+	&:hover:before,
+	&:focus:before {
+		animation: .5s forwards hover-v linear;
+		animation-fill-mode: forwards;
+	}
+}
+
+
+@mixin dltable() {
+	dl{
+		dt{
+			border-right:1px solid $bdcolor;
+			text-align:center;
+			width:34%;
+			background-color:#f0f2f7;
+		}
+		dd{}
+	}
+	dl{
+		display:table;
+		width:100%;
+		table-layout:fixed;
+		>*{
+			padding:9px 20px;
+			display:table-cell;
+			float:none;
+			vertical-align:middle;
+			border-bottom:1px solid $bdcolor;
+		}
+		&:last-child >*{border-bottom:none;}
+	}
+}
+
+@mixin d-table {
+	display: table;
+	width: 100%;
+	text-align: fixed;
+	>*{
+		display: table-cell;
+		padding-left: 10px;
+		padding-right: 10px;
+		&:first-child{
+			padding-left: 0;
+		}
+		&:last-child{
+			padding-right: 0;
+		}
+	}
+	&.hover,
+	&.focus,
+	&.active{
+		span.title{
+			text-decoration: underline;
+		}
+	}
+}
+@mixin flex-row{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: left;
+	align-items:center;
+}
+@mixin flex-row-wrap{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content:center;
+	align-items:center;
+}
+@mixin vbar {
+	background: url(/fss/commons/img/vbar.png) no-repeat 0 50%;
+}
+@mixin triangle($size:14px) {
+	width: 0px;
+	height: 0px;
+	border-top:$size solid  $point;
+	border-bottom:$size solid none;
+	border-right: $size solid transparent;
+	border-left: $size solid  transparent;
+}

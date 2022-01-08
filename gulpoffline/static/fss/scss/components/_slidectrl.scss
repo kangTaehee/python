@@ -1,0 +1,70 @@
+/* @mixin ctrlSize() {
+	width:22px;
+	height:22px;
+}
+.mainvisual{
+	position:relative;
+	height:400px;
+	padding-top:360px;
+	text-align:center;
+	.ctrl{
+		// position:absolute;right:0;top:0;height:27px;z-index:319;text-align:right;
+		position:relative;
+		z-index:100;
+		display:inline-block;
+	}
+	.ctrl>button{
+		@include ctrlSize;
+		margin-right:2px;border:none;vertical-align:middle;overflow:hidden;cursor:pointer;float:left;
+		// background:#e5e5ec url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF4AAAAXCAMAAAC1Wwj4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAC1QTFRF0dHYx8fNvb3DsLC1tbW7w8PJ4eHo4ODmTFlu4+Pq4eHn4uLp5OTr39/m5eXs7/OYpQAAAQlJREFUeNq0lcFyhCAQRMcNEAJj///nBhzBETC1VZnt2oO+7npS7kFi2vyQjRiw4USUMSQTATacfOYp2QM2nPxMGb7+LDi9sMAvwIYX/c8UmVvwz+tzS4xRLmQ+wDsXenbPe6W/Cj3X+zf1Uet5pSn/Cq8e2/mgv/Yx6n05fThSYGjhOke/7ZXigs5C7w9935PDZA9wgLv0vVT8ptf7qPxwRZ+OFJRaZN5ve6W4oLPQe7G3fddr/11/FW/r06xfa54e+6c+af13SynkQuYDvHOhZ/e81/qV5p+cHO9T4Bg2vJx+xlznJvzjpw9ppCHUd2nCyW9h/EaGrX7cTDjt3n0NcX5n2PBfAQYAxXFSIidfxVUAAAAASUVORK5CYII=) no-repeat 0 0;
+		background: url(/fss/ucms/img/main/visualCtrl.png) 4px center no-repeat;
+		&.pre{background-position:0 0}
+		&.next{background-position:-24px 0}
+		&.stop{background-position:right 0;}
+		&.play{
+			// background-position:-72px 0;
+		}
+	}
+	.ctrl>button span{}
+	.area{}
+	.area ul{
+		display:inline;
+	}
+	.area ul li{display:inline-block;}
+	.area ul li a{position:relative;z-index:340}
+	.area ul li .num,
+	.area ul li .num>*{
+        transition: width .25s;
+	}
+	.area ul li .num .r,
+	.area ul li .num{
+		background:#48C9B0 no-repeat 0 0;
+		font-size:0;width:15px;display:block;
+	}
+	.area ul li .num{
+		@include ctrlSize;
+		overflow:hidden;margin-right:3px;border-radius:30px;
+		border:3px solid #ffa900;
+		background-color:transparent;
+	}
+	.area ul li .num .r{display:block;overflow:hidden;background-position:right 0;width:0;}
+	.area ul li .view{
+		border:none;
+		position:absolute;
+		left:0;right:0;
+		top:0;
+		height:400px;
+		width:100%;
+		display:none;
+		margin: 0 auto;
+	}
+	.area ul li .view .img{}
+	.area ul li .view .img img{width:100%;}
+	.area ul li.on .num .r,
+	.area ul li.on .num{background:#ffa900 no-repeat 0 0}
+	.area ul li.on .num{
+		// width:28px;
+	}
+	.area ul li.on .num .r{background-position:right 0;width:12px;width:0;}
+	.area ul li.on .view{display:block}
+} */

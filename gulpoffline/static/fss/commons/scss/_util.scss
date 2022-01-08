@@ -1,0 +1,75 @@
+// % 계산
+@function per($size, $contex: $mdwidth) {
+	//Default font size on html element is 100%, equivalent to 16px;
+	@return #{$size / $contex * 100%};
+}
+// pixel to em
+// $pixels 해당 요소 px
+// $context 브라우저 기본 사이즈 : 16px
+@function em($pixels, $context: $browser-context) {
+	@return #{$pixels/$context}em;
+}
+
+@mixin la() {
+	font-family: 'Line Awesome Free';
+	font-weight: 900;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1;
+}
+@mixin ti() {
+	font-family: 'themify', 'malgun gothic', '맑은고딕', 'AppleGothic', Helvetica, Arial, sans-serif;
+}
+@mixin clearfix() {
+	display: block;
+	&:before,
+	&:after {
+		content: '.';
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+}
+@mixin shadow() {
+	border-radius: 3px;
+	box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.05);
+}
+@mixin ellipsis() {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: inline-block;
+}
+
+@mixin background-image-retina($file, $type, $width: auto, $height: auto) {
+	background-image: url($file + '.' + $type);
+	@media (-webkit-min-device-pixel-ratio: 2) {
+		& {
+			background-image: url($file + '@2x.' + $type);
+			background-size: $width $height;
+		}
+	}
+}
+// 비율 이미지 박스
+@mixin aspectRatio($w, $h) {
+	position: relative;
+	overflow: hidden;
+	&::before {
+		content: '';
+		display: block;
+		height: 0;
+		padding-top: per($h, $w);
+	}
+	img {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+		vertical-align: top;
+	}
+}

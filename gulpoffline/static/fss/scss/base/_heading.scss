@@ -1,0 +1,456 @@
+@mixin bu-dot() {
+	background:url(/fss/fss/img/common/bu-dot.png) 0 8px no-repeat;
+	background-size:5px;
+	padding-left:16px;
+}
+@mixin bu-dot2() {
+	background:url(/fss/fss/img/common/bu-dot2.png) 0 8px no-repeat;
+	background-size:6px;
+	padding-left:17px;
+}
+
+@mixin bu1() {
+	position: relative;
+	padding: 10px 0 15px 24px;
+	margin-top: 30px;
+	font-size : 20px;
+	font-weight: 700;
+	line-height : 1;
+	color : $point;
+	background-size : 16px 16px;
+	border-bottom:1px solid $bdcolor;
+	&:before {
+		position: absolute;
+		top:13px;
+		left: 0;
+		content: '';
+		width: 16px;
+		height: 16px;
+		border: 4px solid $skyblue;
+		border-radius: 50%;
+	}
+	&.lh15{
+		line-height: 1.5;
+		&:before{
+			top: 18px;
+		}
+	}
+
+}
+@mixin bu2() {
+	position: relative;
+	margin-left: 10px;
+	margin-top: 14px;
+	padding-left:25px;
+	font-size:18px;
+	&:before {
+		position: absolute;
+		top:6px;
+		left: 0;
+		content: '';
+		width: 16px;
+		height: 16px;
+		background: url(/fss/fss/img/common/bu2.png) 0 0 no-repeat;
+		background-size:16px 16px;
+	}
+}
+@mixin bu3() {
+	position: relative;
+	margin-left: 14px;
+	padding-left:16px;
+	color: $black;
+	font-size:16px;
+	&:before {
+		position: absolute;
+		top:6px;
+		left: 0;
+		content: '';
+		width: 8px;
+		height: 10px;
+		background: url(/fss/fss/img/common/bu3.png) 0 0 no-repeat;
+		background-size:8px 10px;
+	}
+}
+
+@mixin bu4() {
+	position:relative;
+	padding-left:14px;
+	font-size: 16px;
+	margin-left: 25px;
+	&:before {
+		content: '';
+		width:6px;
+		height:6px;
+		border-radius: 3px;
+		background:$skyblue;
+		position:absolute;
+		left:0;
+		top:10px;
+	}
+}
+@mixin bu5() {
+	position: relative;
+	padding-left: 10px;
+	font-size: 16px;
+	font-weight: 400;
+	&::before {
+		position: absolute;
+		top:0;
+		left: 0;
+		content: "- ";
+	}
+}
+// 콘텐츠 불릿
+
+/* 1 */
+#content .header-nobg{
+	padding-left: 0;
+	margin-left: 0;
+	&::before,
+	&::after{
+		display: none !important;
+	}
+	&.bn{
+		margin-bottom: 5px;
+		padding-bottom: 0;
+	}
+}
+#content h2,
+.bu1{
+	@include bu1;
+	margin-bottom: 10px;
+	&+.bd-list,
+	&+.table,
+	&+.bd-view,
+	&+.reg,
+	&+.box-thumbnail{
+		margin-top:-11px;
+	}
+	&+.table{
+		border-top-width: 1px;
+	}
+	>span{
+		font-size:$html-font-size;
+		font-weight:normal;
+		font-family:$font-set;
+	}
+	>a{
+		font-weight:normal;
+	}
+	&.no-bull{
+		border-bottom: 1px solid $skyblue;
+		padding-left: 0 !important;
+		margin-top: 0;
+
+		&.str{
+			font-family: $heading-font;
+			font-size: 24px;
+			color:$black;
+			border:none;
+			padding-bottom: 19px;
+		}
+
+	}
+	&.bd-point{
+		border-color: $point;
+	}
+	&.bdbn{border-bottom: none;}
+	& + h3{
+		margin-top: 14px;
+	}
+	&.img-rt-top{
+		margin-top: -11px;
+	}
+}
+.no-bull::before{
+	display: none;
+}
+/* 2 */
+#content h3,
+.bu2{
+	@include bu2;
+	.row &{margin-top:0;}
+	&+.n+.list-num,
+	&+.list-num
+	{
+		margin-left:11px;
+	}
+	>span{
+		font-size:$html-font-size;
+		font-weight:normal;
+		font-family:$font-set;
+	}
+	&.point{color: $point}
+	&.img-rt-top{
+		margin-top: -5px;
+		margin-left: 0;
+	}
+}
+#content h3{
+	color: $blue;
+}
+/* 3 */
+#content h4,
+.bu3{
+	@include bu3;
+	margin:12px 0 12px 16px;
+	font-weight:normal;
+	text-indent:0 !important;
+	&+.table{margin-top:0;}
+}
+
+/* 4 */
+#content h5,
+.bu4{
+	@include bu4;
+}
+/* 5 */
+#content h6{
+	font-size: 1em;
+	padding-left: 38px;
+}
+.bu5{
+	&::before{
+		content:'- ';
+		margin-right: 5px;
+	}
+	font-size:1em;
+	padding-left: 38px;
+}
+// 좌측 여백
+.m1{
+	@include breakpoint($md){
+		margin-left:$m1;
+	}
+}
+.m2{
+	margin-left:$m2;
+}
+dl.m1{
+	*{margin-bottom:5px;}
+}
+
+// 리스트타입
+.list{
+	>li{
+		@include bu2;
+		>strong{
+			color: $point;
+		}
+		>ul{
+			>li{
+				@include bu3;
+				margin-left: 0;
+				>ul,
+				>ol{
+					li{
+						text-indent:-12px;
+						padding-left:12px;
+						&:before {
+							content: '· ';
+							display:inline;
+						}
+					}
+				}
+			}
+			&.none{
+				li{
+					&:before {display:none}
+				}
+			}
+			&.number{
+				li{
+					text-indent:-20px;
+					padding-left:20px;
+					&:before {display:none}
+				}
+			}
+		}
+		.mw{
+			margin-left:-20px-14;
+		}
+	}
+	>li+li{
+		margin-top:5px;
+	}
+	.table{margin-top:5px;margin-bottom:0;}
+	[class^=b-]{
+		min-height:inherit;
+		/* &.b-down{
+			margin:-3px 0 0 0;
+			padding:4px 8px;
+		} */
+	}
+}
+dl.list{
+	margin:0;
+	dt{
+		@include bu3;
+	}
+	dd{
+		margin-left:10px;
+		text-indent:-16px;
+		padding-left:16px;
+		&:before {
+			content: '- ';
+		}
+	}
+}
+.list2{
+	margin-top:10px;
+	margin-left: 0;
+	margin-bottom: 15px;
+	h3 + &,
+	h4 + &{
+		margin-left: 25px;
+	}
+	>li{
+		@extend .bu4;
+		margin-left: 0;
+		&+li{margin-top:4px;}
+		ul{
+			li{
+				@include bu5;
+			}
+		}
+		&.none{&::before{content: none;}}
+	}
+	dd &{
+		margin-top: 0;
+	}
+}
+@mixin m1(){
+	@include breakpoint($md){
+		margin-left:$m1;
+	}
+}
+
+.list-num{
+	padding-left: 20px;
+	list-style: decimal;
+	h2+p+&,
+	h3+p+&,
+	h4+&{
+		@include m1;
+		margin-bottom:10px;
+	}
+	&.type2 {
+		padding-left: 25px;
+		list-style: hangul;
+	}
+}
+
+p+.table{margin-top:0;}
+
+//리스트 스타일
+.list-dot {
+	>li{
+		position: relative;
+		padding-left: 10px;
+		&::before{
+			position: absolute;
+			top: 10px;
+			left: 0;
+			content:"";
+			display: block;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: $point;
+		}
+	}
+	//표에 들어가는 style
+	&.type2 {
+		li {
+			&::before{
+				width: 5px;
+				height: 5px;
+				background: #757575;
+			}
+		}
+	}
+}
+.list-bu2 > li {
+	@include bu2;
+	strong{
+		color: $point;
+		font-weight: 700;
+	}
+	>ul>li{
+		@include bu3;
+		margin-left: 0;
+	}
+}
+
+#content h3 + p,
+#content h3 + p + p{
+	@extend .bu3;
+}
+#content h3+.list,
+#content h3+p+.list,
+.list-bu3 {
+	margin-bottom: 17px;
+	> li {
+		@include bu3;
+		>ul{
+			margin-left: 0;
+			>li{
+				@include bu4;
+				margin-left: 0;
+			}
+		}
+	}
+}
+.list-bu4 > li {
+	@include bu4;
+}
+.list-bu5 > li {
+	@include bu5;
+}
+
+.list-dash{
+	li{
+		margin-left: 13px;
+		text-indent: -8px;
+		word-break: keep-all;
+	}
+}
+
+
+/////////////////
+// 좌측 여백
+.m1{
+	@include breakpoint($md){
+		margin-left:$m1;
+	}
+}
+.m2{
+	margin-left:$m2;
+}
+dl.m1{
+	*{margin-bottom:5px;}
+}
+
+// 삭제 예정 클래스
+.list-star{ }
+.bu-star{ }
+.list-dl{ }
+.list-img{ }
+
+.search{
+	@include bu1;
+	&::before{
+		content: '\f002';
+		@include fa;
+		border: none;
+		top: 10px;
+		color: #005aab;
+	}
+	color: #000000;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: -0.45px;
+	span{
+		color: #005aab;
+	}
+}

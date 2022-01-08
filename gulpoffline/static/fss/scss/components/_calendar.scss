@@ -1,0 +1,145 @@
+.calendar-controll {
+	text-align: center;
+	button {
+		text-align: center;
+		border: 1px solid #ddd;
+		width: 28px;
+		height: 28px;
+		border-radius: 5px;
+		vertical-align: middle;
+		&:hover,
+		&:focus,
+		&.active {
+			color: #0c9ebd;
+			background-color: #ffffff;
+			border: 1px solid #0c9ebd;
+		}
+		&+button{
+			margin-left: 6px;
+		}
+	}
+	select {
+		height: 28px;
+		border: none;
+		vertical-align: middle;
+	}
+	&+.bd-list{
+		margin-top: 20px;
+	}
+	&.type-single{
+		select{
+			font-size: 18px;
+			color: #000;
+		}
+	}
+}
+.calendar {
+	padding: 30px;
+	border-radius: 5px;
+	border: 2px solid #0c9ebd;
+	@include breakpoint($sm) {
+		padding: 10px;
+	}
+
+	
+	.calendar-list {
+		margin-top: 20px;
+		overflow-x: auto;
+
+		table {
+			min-width: 640px;
+			table-layout: fixed;
+		}
+		thead {
+			width: 15px;
+			height: 17px;
+			color: #888888;
+			font-family: 'Noto Sans CJ Kkr - Demi Light';
+			font-size: 18px;
+			font-weight: 400;
+			font-style: normal;
+			letter-spacing: normal;
+			line-height: 22px;
+			text-align: center;
+			font-style: normal;
+			letter-spacing: -0.45px;
+			line-height: normal;
+			th {
+				padding: 10px 0 20px;
+				line-height: 1;
+				position: relative;
+				&::before {
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 0;
+					left: 0;
+					border-bottom: 1px solid #dddddd;
+					bottom: 10px;
+				}
+			}
+		}
+		tbody {
+			td {
+				min-height: 110px;
+				@include breakpoint($lg) {
+					height: 110px;
+				}
+				border-radius: 5px 5px 0 0;
+				background-color: #f2f7fb;
+				font-size: 18px;
+				padding: 14px 10px;
+				vertical-align: top;
+				color: #000;
+				font-weight: 300;
+				&.empty {
+					background-color: #fff;
+				}
+				&.sun {
+					color: #ed1b2f;
+				}
+				&.sat {
+					color: #005baa;
+				}
+			}
+		}
+		span.schedule {
+			display: inline-block;
+			// width: 30px;
+			// height: 26px;
+			line-height: 1;
+			padding: 6px 10px;
+			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			background-color: #0c9ebd;
+			text-align: center;
+			color: #fff;
+			margin-bottom: 8px;
+		}
+		button {
+			position: relative;
+			display: block;
+			padding-left: 20px;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			width: 100%;
+			text-align: left;
+			color: #000;
+			font-size: 16px;
+			font-weight: 400;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 10px;
+				left: 0;
+				width: 10px;
+				height: 10px;
+				border-radius: 5px;
+				box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+				background-color: #005baa;
+				display: inline-block;
+			}
+		}
+	}
+}

@@ -1,0 +1,131 @@
+#faq-list{
+	margin-top: 30px;
+	border-top: 2px solid $bdtopcolor;
+	border-bottom: 1px solid $bdcolor;
+	dt{
+		button, 
+		.sets{
+			position: relative;
+			width: 100%;
+			text-align: left;
+			display: block;
+			padding: 0;
+			padding-left: 90px;
+			min-height: 70px;
+			font-size: 1.125rem;
+			font-weight: 700; 
+			@include breakpoint($sm){
+				padding-left: 45px;
+			}
+			&::after{
+				// @include sprite($la-angle-up);
+				content: '\f107';
+				@include la;
+				position: absolute;
+				right: 20px;
+				top: calc(50% - 9px);
+				transition: all 0.5s ;
+			}
+		}
+		&.open{
+			background: $faq-Q-dt-bgcolor;
+			button,
+			.sets{
+				color: $point;
+				&::after{
+					transform: rotate(180deg);
+					transform-origin:50%;
+				}
+			}
+			.faq-img{  background-color: $point;}
+			&+dd{
+				border-top: 1px solid $bdcolor;
+				display: block;
+			}
+			&+dd+dt{border-top-width: 0;}
+		}
+	}
+	dd+dt{
+		border-top: 1px solid $bdcolor;
+	}
+	.faq-img{
+		position: absolute;
+		left: 0;
+		top: 10px;
+		width: 60px;
+		height: 50px;
+		// background-color: $point;
+		background-color: $faq-Q-bgcolor;
+		border-radius: 15px 15px 15px 0;
+		line-height: 36px;
+		text-align: center;
+		@include breakpoint($sm){
+			left: 3px;
+		}
+		i{
+			display: inline-block;
+			vertical-align: middle;
+			&::before{
+				content: 'Q.';
+				@include headingfont;
+				color: #ffffff;
+				vertical-align: top;
+				margin-top: 8px;
+				margin-right: 0;
+				font-size: 24px;
+			}
+			&.ico-a:before{display: none;}
+		}
+	}
+	dd{
+		position: relative;
+		border-bottom: 1px solid $bdcolor;
+		padding: 18px 15px 18px 90px;
+		padding-right: 15px;
+		min-height: 70px;
+		display: none;
+		&:last-child{border-bottom-width: 0;}
+		@include breakpoint($sm){
+			padding-left: 45px;
+			padding-right: 5px;
+		}
+		.faq-img{
+			background-color: $skyblue;
+			border-radius:0 15px 15px 15px;
+			@include breakpoint($sm){
+				left: 3px;
+			}
+			i {
+				&::before{
+					content: 'A.';
+					display: block;
+				}
+			}
+		}
+	}
+	
+	&.no-open{
+		.sets{
+			&::after{
+				display: none !important;
+			}
+		}
+		dt,
+		dt.open+dd{
+			background: none;
+			border-width:0 0 1px;
+		}
+		.title{
+			padding-top: 21px;
+		}
+		.desc{
+			padding-top: 4px;
+		}
+
+	}
+
+	dd.nodata{
+		display: block;
+		padding: 30px;
+	}
+}
