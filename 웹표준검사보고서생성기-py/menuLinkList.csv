@@ -1,3 +1,15 @@
 MENU_NO,MENU_NM,ALL_MENU_COURS
-200180,,/fss/main/contents.do?menuNo=200228
-200180,,/fss/main/contents.do?menuNo=200228
+1,,/gcc
+2,,/menu?menuId=MENU02419
+3,,/menu?menuId=MENU02417
+4,,/menu?menuId=MENU02446
+5,,/gcc/game/agree?menuId=MENU02421
+6,,/gcc/game/character/auth?menuId=MENU02488
+7,,/menu?menuId=MENU02408
+8,,/menu?menuId=MENU02450
+9,,/menu?menuId=MENU02452
+10,,/menu?menuId=MENU02412
+11,,/menu?menuId=MENU02414
+12,,/menu?menuId=MENU02407
+13,,/menu?menuId=MENU02423
+14,,/gcc/program?menuId=MENU02447

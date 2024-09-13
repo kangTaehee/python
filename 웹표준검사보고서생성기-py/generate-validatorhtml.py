@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from PIL import Image
 import pandas as pd
 
-domain = 'http://112.220.85.26:38080'
+domain = 'https://www.gcon.or.kr'
 
 menu_file = 'menuLinkList.csv'
 
@@ -58,40 +58,40 @@ data="""
 """
 f.write(data)
 for idx, row in df.iterrows():
-	try:
-		# driver.get(domain + row['ALL_MENU_COURS'])
-		# driver.get(row['ALL_MENU_COURS'])
-		req = requests.get(domain + row['ALL_MENU_COURS'])
-		## HTML 소스 가져오기
-		html = req.text
-		## BeautifulSoup으로 html소스를 python객체로 변환하기
-		## 첫 인자는 html소스코드, 두 번째 인자는 어떤 parser를 이용할지 명시.
-		## 이 글에서는 Python 내장 html.parser를 이용했다.
-		soup = BeautifulSoup(html, 'html.parser')
-		my_titles = soup.select(
-			'.navigation'
-			)
-		## my_titles는 list 객체
-		for title in my_titles:
-			## Tag안의 텍스트
-			print('---')
-			print(title.text)
-			## Tag의 속성을 가져오기(ex: href속성)
-			# data = title.text % i
-			data = '<div class="a4">\n<h1>'+title.text+"</h1>\n" 
-			print(type(row['ALL_MENU_COURS']))
-			data+='<a href="{}">{}</a>'  .format(row['ALL_MENU_COURS'],row['ALL_MENU_COURS'])
-			data+='<table>\n'
-			data+='	<tr><td>https://validator.w3.org/nu/?doc={}</td></tr>\n' .format(row['ALL_MENU_COURS'])
-			data+='	<tr>\n'
-			data+='		<td><div class=img><img src="va/%d.png"></div></td>\n' % row['MENU_NO']
-			data+='	</tr>\n'
-			data+='</table>\n'
-			data+='</div>\n'
-			f.write(data)
-	except Exception as e:
-		print(e)
-		continue
+    try:
+        # driver.get(domain + row['ALL_MENU_COURS'])
+        # driver.get(row['ALL_MENU_COURS'])
+        req = requests.get(domain + row['ALL_MENU_COURS'])
+        ## HTML 소스 가져오기
+        html = req.text
+        ## BeautifulSoup으로 html소스를 python객체로 변환하기
+        ## 첫 인자는 html소스코드, 두 번째 인자는 어떤 parser를 이용할지 명시.
+        ## 이 글에서는 Python 내장 html.parser를 이용했다.
+        soup = BeautifulSoup(html, 'html.parser')
+        my_titles = soup.select(
+         '.navigation'
+         )
+        ## my_titles는 list 객체
+        for title in my_titles:
+            ## Tag안의 텍스트
+            print('---')
+            print(title.text)
+            ## Tag의 속성을 가져오기(ex: href속성)
+            # data = title.text % i
+            data = '<div class="a4">\n<h1>'+title.text+"</h1>\n"
+            print(type(row['ALL_MENU_COURS']))
+            data+='<a href="{}">{}</a>'  .format(row['ALL_MENU_COURS'],row['ALL_MENU_COURS'])
+            data+='<table>\n'
+            data+='	<tr><td>https://validator.w3.org/nu/?doc={}</td></tr>\n' .format(row['ALL_MENU_COURS'])
+            data+='	<tr>\n'
+            data+='		<td><div class=img><img src="va/%d.png"></div></td>\n' % row['MENU_NO']
+            data+='	</tr>\n'
+            data+='</table>\n'
+            data+='</div>\n'
+            f.write(data)
+    except Exception as e:
+        print(e)
+        continue
 data="""</body></html>"""
 f.write(data)
 f.close()
